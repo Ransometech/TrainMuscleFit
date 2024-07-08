@@ -3,11 +3,11 @@
 
 int main(void)
 {
-    int 0;
+    int n=0;
     do
     {
         n = get_int("Size: ");
-        printf(n);
+        printf(%n);
     }
     while (n < 1);
 
