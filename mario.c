@@ -7,7 +7,7 @@ int main(void)
     do
     {
         n = get_int("Size: ");
-        printf(%n);
+        printf("%d", n);
     }
     while (n < 1);
 
