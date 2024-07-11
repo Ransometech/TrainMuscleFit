@@ -5,7 +5,7 @@
 int char
 int main(void)
 {
-    string word1 = get_string("Enter a word: ")
-    string word2 = get_string("Enter a word: ")
+    string word1 = get_string("Player 1: ")
+    string word2 = get_string("Player: ")
 
 }
