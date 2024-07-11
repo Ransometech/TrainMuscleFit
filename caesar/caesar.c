@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+string ciphertext(string text);
 // Function prototypes
 bool is_digits(string s);
 
@@ -17,7 +17,7 @@ int main(int argc, string argv[])
 
     }
     int key = atoi(argv[1]);
-    string plaintext = get_string("Plaintext: ")
+    string plaintext = get_string("Plaintext: ");
 
     return 0;
 
