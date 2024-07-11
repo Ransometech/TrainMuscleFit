@@ -30,7 +30,7 @@ int main(void)
     }
     else
     {
-        printf("It's a tie!\n");
+        printf("Tie!\n");
     }
 
 }
