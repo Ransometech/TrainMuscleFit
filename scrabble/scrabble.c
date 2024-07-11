@@ -13,7 +13,9 @@ int main(void)
     string word2 = get_string("Player 2: ");
     printf("%d", word1['B']);
 
-     // Compute the score of each word
+     // Calculate the score of each word
+    int score1 = calculate_score(word1);
+    int score2 = calculate_score(word2);
 
       // Print the winner
 
@@ -35,7 +37,7 @@ int calculate_score(string word)
         {
             score+=Points[word[i]-'a'];
         }
-    }
+
 
     }
     return score;
