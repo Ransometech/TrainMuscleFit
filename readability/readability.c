@@ -28,6 +28,9 @@ int main(void)
     int index = round( 0.0588 * L - 0.296 * S - 15.8);
 
     // Print the grade level
+    if (index <= 0){
+
+    }
     printf("Grade %d\n", index);
 }
 
