@@ -74,7 +74,7 @@ bool not_repeat(string key)
             {
                 printf("%c %c", key[j], key[i]);
 
-                 return false;
+                return false;
             }
         }
     }
