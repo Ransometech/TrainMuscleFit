@@ -5,9 +5,8 @@
 #include <string.h>
 
 // Function prototypes
-int count_letters(string text);
-int count_words(string text);
-int count_sentences(string text);
+bool is_digits(string s);
+
 
 int main(int argc, string argv[])
 {
@@ -21,3 +20,14 @@ int main(int argc, string argv[])
 
 }
 
+bool is_digits(string s)
+{
+    for (int i = 0, len = strlen(s); i < len; i++)
+    {
+        if (!isdigit(s[i]))
+        {
+            return false;
+        }
+    }
+    return true;
+}
