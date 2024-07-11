@@ -24,7 +24,7 @@ int calculate_score(string word)
 {
     int score = 0;
 
-    for (int i=0; int wlen = strlen(word); i<wlen; i++)
+    for (int i=0; wlen = strlen(word); i<wlen; i++)
     {
         if (isupper(word[i]))
         {
