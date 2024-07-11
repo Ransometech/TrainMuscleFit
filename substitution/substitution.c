@@ -5,15 +5,15 @@
 #include <string.h>
 
 // Function prototypes
-bool is_digits(string s);
+bool alpha_digits(string s);
 string ciphertext(string text, int key);
 
 int main(int argc, string argv[])
 {
 
-    if (argc != 2 || !is_digits(argv[1]))
+    if (argc != 2 || !alpha_digits(argv[1]))
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./substitution key\n");
         return 1;
     }
 
