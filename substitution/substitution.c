@@ -69,7 +69,7 @@ bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        for (int j = 0, len = strlen(key); j < len; j++)
+        for (int j = 0; j < len; j++)
         {
             if (key[j]==key[i])
             {
