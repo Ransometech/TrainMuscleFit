@@ -16,6 +16,7 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+
     else if (!alpha_key(argv[1]))
     {
         printf("Key must only contain alphabetic characters\n");
@@ -34,7 +35,7 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
 
         // Encrypt the plaintext
-        ciphertext(plaintext, key);
+        //ciphertext(plaintext, key);
     }
 
 
