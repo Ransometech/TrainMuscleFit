@@ -11,7 +11,7 @@ int main(void)
     // Prompt the Players for two words
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
-    printf(word1['A']);
+    printf("%d", word1['A']);
 
      // Compute the score of each word
 
