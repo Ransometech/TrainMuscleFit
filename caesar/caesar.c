@@ -13,19 +13,23 @@ string ciphertext(string text, int key);
 
 int main(int argc, string argv[])
 {
+
     if (argc != 2 || !is_digits(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
 
     }
+
     int key = atoi(argv[1]);
     string plaintext = get_string("Plaintext: ");
 
+    // Encrypt the plaintext
     ciphertext(plaintext, key);
 
 }
 
+// Check if a string contains only digits
 bool is_digits(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
@@ -37,6 +41,8 @@ bool is_digits(string key)
     }
     return true;
 }
+
+// Encrypt the plaintext
 string ciphertext(string text, int key)
 {
     for (int i=0, text_len = strlen(text); i <text_len; i++)
