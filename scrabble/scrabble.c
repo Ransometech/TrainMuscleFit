@@ -10,8 +10,8 @@ int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 
 int main(void)
 {
     // Prompt the Players for two words
-    string word1 = get_string("Player 1: ")
-    string word2 = get_string("Player 2: ")
+    string word1 = get_string("Player 1: ");
+    string word2 = get_string("Player 2: ");
 
      // Compute the score of each word
 
@@ -23,5 +23,14 @@ int main(void)
 
 int calculate_score(word)
 {
+
+    for (i=0; wlen = strlen(word; i<wlen; i++))
+    {
+        if (isupper(word[i]))
+        {
+            score = 
+        }
+
+    }
 
 }
