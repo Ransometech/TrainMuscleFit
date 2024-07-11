@@ -11,7 +11,7 @@ int count_sentences(string text);
 
 int main(int argc, string argv[])
 {
-    if (argc != 2  || !isdigit(argc[1]))
+    if (argc != 2  || !isdigit(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
