@@ -4,7 +4,7 @@
 #include <string.h>
 
 int calculate_score(string word);
-int POINTs[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+int Points[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 int main(void)
 {
@@ -29,7 +29,11 @@ int calculate_score(string word)
     {
         if (isupper(word[i]))
         {
-            score = POINTs[word[i]-'A'];
+            score = Points[word[i]-'A'];
+        }
+        else if(islower(word[i])){
+            score+=Points[word[i]-'a'];
+        }
         }
 
     }
