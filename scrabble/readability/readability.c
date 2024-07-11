@@ -24,7 +24,7 @@ int main(void)
     printf("The text contains %d sentences.\n", sentences);
 
     // Compute the Coleman-Liau index
-    int L =
+    float L = float(letters)/float(words) * 100;
     // Print the grade level
 }
 
