@@ -17,3 +17,8 @@ int main(void)
 
 
 }
+
+int calculate_score(word)
+{
+    
+}
