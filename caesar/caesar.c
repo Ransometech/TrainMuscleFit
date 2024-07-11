@@ -16,6 +16,8 @@ int main(int argc, string argv[])
         return 1;
 
     }
+    int key = arg[1];
+    
     return 0;
 
 }
