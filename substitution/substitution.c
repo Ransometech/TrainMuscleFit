@@ -25,7 +25,7 @@ int main(int argc, string argv[])
 }
 
 // Check if a string contains only digits
-bool is_digits(string key)
+bool is_key(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
