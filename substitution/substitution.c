@@ -19,7 +19,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    / Check if the key contains only alphabetic characters
+    // Check if the key contains only alphabetic characters
     else if (!alpha_key(argv[1]))
     {
         printf("Key must only contain alphabetic characters\n");
@@ -56,7 +56,7 @@ int main(int argc, string argv[])
 
 }
 
-// Check if a string contains only alphabet
+// Check if the key contains only alphabetic characters
 bool alpha_key(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
@@ -69,6 +69,7 @@ bool alpha_key(string key)
     return true;
 }
 
+// Check for duplicate characters
 bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
@@ -86,6 +87,7 @@ bool not_repeat(string key)
     }
     return true;
 }
+
 // Encrypt the text
 string ciphertext(string text, string key)
 {
