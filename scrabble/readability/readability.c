@@ -44,7 +44,7 @@ int count_words(string text)
     int count = 0;
     for (int i, text_len=strlen(text); i<text_len; i++;)
    {
-        if (text[i] == " ")
+        if (text[i] == ' ')
         {
             count++;
         }
