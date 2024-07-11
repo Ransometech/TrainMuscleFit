@@ -19,6 +19,8 @@ int main(int argc, string argv[])
     }
     if (!isdigit(argc[1]))
     {
+        printf("Usage: ./caesar2 key\n");
+        return 1;
 
     }
     return 0;
