@@ -9,8 +9,6 @@
 bool is_digits(string s);
 string ciphertext(string text, int key);
 
-
-
 int main(int argc, string argv[])
 {
 
@@ -42,7 +40,7 @@ bool is_digits(string key)
     return true;
 }
 
-// Encrypt the plaintext
+// Encrypt the text
 string ciphertext(string text, int key)
 {
     for (int i=0, text_len = strlen(text); i <text_len; i++)
