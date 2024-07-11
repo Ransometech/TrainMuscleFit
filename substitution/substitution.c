@@ -8,7 +8,7 @@
 bool alpha_key(string key);
 bool not_repeat(string key);
 
-string ciphertext(string text, int key);
+string ciphertext(string text, string key);
 
 int main(int argc, string argv[])
 {
@@ -82,7 +82,7 @@ bool not_repeat(string key)
     return true;
 }
 // Encrypt the text
-string ciphertext(string text, int key)
+string ciphertext(string text, string key)
 {
     for (int i = 0, text_len = strlen(text); i < text_len; i++)
     {
