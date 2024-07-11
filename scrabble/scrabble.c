@@ -22,6 +22,7 @@ int main(void)
 
 int calculate_score(string word)
 {
+    int score = 0;
 
     for (i=0; int wlen = strlen(word); i<wlen; i++))
     {
