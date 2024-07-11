@@ -4,7 +4,7 @@
 #include <string.h>
 int char
 
-int calculate_score(word);
+int calculate_score(string word);
 int POINTs[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 int main(void)
@@ -21,7 +21,7 @@ int main(void)
 
 }
 
-int calculate_score(word)
+int calculate_score(string word)
 {
 
     for (i=0; wlen = strlen(word; i<wlen; i++))
