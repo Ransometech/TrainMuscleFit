@@ -18,6 +18,7 @@ int main(void)
     int words = count_words(text);
     int sentences = count_sentences(text);
 
+    printf("The text contains %d letters.\n", letters);
     // Compute the Coleman-Liau index
 
     // Print the grade level
@@ -29,7 +30,7 @@ int count_letters(string text)
     int count = 0;
     for (int i=0, text_len = strlen(text); i<text_len; i++)
     {
-        if (isalpha(text[i])
+        if (isalpha(text[i]))
         {
             count++;
         }
