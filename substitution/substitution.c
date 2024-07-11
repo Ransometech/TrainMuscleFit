@@ -69,9 +69,9 @@ bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        for (int j = 1; j < len; j++)
+        for (int j = 1+i; j < len; j++)
         {
-            if (key[j+i] == key[i])
+            if (key[j] == key[i])
             {
                 printf("%c %c", key[j], key[i]);
 
