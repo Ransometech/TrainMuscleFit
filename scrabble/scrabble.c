@@ -38,10 +38,9 @@ int main(void)
 int calculate_score(string word)
 {
     int score = 0;
-    int wlen = strlen(word);
 
     // Calculate score for each character
-    for (int i = 0; i < wlen; i++)
+    for (int i = 0, wlen = strlen(word); i < wlen; i++)
     {
         if (isupper(word[i]))
         {
