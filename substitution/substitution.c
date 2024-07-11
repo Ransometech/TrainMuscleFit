@@ -11,9 +11,14 @@ string ciphertext(string text, int key);
 int main(int argc, string argv[])
 {
 
-    if (argc != 2 || !alpha_key(argv[1]))
+    if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
+        return 1;
+    }
+    else if (!alpha_key(argv[1]))
+    {
+        printf("Key must only contain alphabetic characters\n");
         return 1;
     }
 
