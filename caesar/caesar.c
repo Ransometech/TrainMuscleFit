@@ -17,6 +17,7 @@ int main(int argc, string argv[])
         return 1;
 
     }
+    if (argc[1])
     return 0;
 
 }
