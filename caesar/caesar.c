@@ -48,14 +48,11 @@ string ciphertext(string text, int key)
                 text[i] = ((text[i] - 65 + key) % 26) + 65;
             }
 
-            else if (isupper(text[i]))
+            else if (islower(text[i]))
             {
                 text[i] = ((text[i] - 97 + key) % 26) + 97;
             }
         }
-
-
-
 
     }
     // Print the ciphertext
