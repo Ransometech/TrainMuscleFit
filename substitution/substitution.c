@@ -16,17 +16,25 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    
     else if (strlen(argv[1]) != 26)
     (
         printf("Key must contain 26 characters\n");
+         return 1;
 
     )
 
-    int key = atoi(argv[1]);
-    string plaintext = get_string("Plaintext: ");
+    else
+    {
+        int key = atoi(argv[1]);
+        string plaintext = get_string("Plaintext: ");
 
-    // Encrypt the plaintext
-    ciphertext(plaintext, key);
+        // Encrypt the plaintext
+        ciphertext(plaintext, key);
+
+    }
+
+
 }
 
 // Check if a string contains only digits
