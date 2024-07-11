@@ -4,6 +4,9 @@
 #include <string.h>
 int char
 
+int calculate_score(word);
+int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
 int main(void)
 {
     // Prompt the Players for two words
@@ -20,5 +23,5 @@ int main(void)
 
 int calculate_score(word)
 {
-    
+
 }
