@@ -55,7 +55,11 @@ string ciphertext(string text, int key)
         }
 
 
+
+
     }
+    // Print the ciphertext
+    printf("ciphertext: %s\n", text);
 
     return 0;
 
