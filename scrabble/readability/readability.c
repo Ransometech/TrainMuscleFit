@@ -1,5 +1,6 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
+
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -23,8 +24,8 @@ int main(void)
     printf("The text contains %d sentences.\n", sentences);
 
     // Compute the Coleman-Liau index
-    float L = (letters/words) * 100;
-    float S = (sentence/words) * 100;
+    float L = (letters / words) * 100;
+    float S = (sentence / words) * 100;
 
     // Print the grade level
 }
@@ -34,7 +35,7 @@ int count_letters(string text)
 
     // Return the number of letters in text
     int count = 0;
-    for (int i=0, text_len = strlen(text); i<text_len; i++)
+    for (int i = 0, text_len = strlen(text); i <text_len; i++)
     {
         if (isalpha(text[i]))
         {
@@ -48,7 +49,7 @@ int count_words(string text)
 {
     // Return the number of words in text
     int count = 0;
-    for (int i=0, text_len=strlen(text); i<text_len; i++)
+    for (int i = 0, text_len = strlen(text); i < text_len; i++)
    {
         if (text[i] == ' ')
         {
@@ -62,7 +63,7 @@ int count_sentences(string text)
 {
     // Return the number of sentences in text
    int count = 0;
-    for (int i=0, text_len=strlen(text); i<text_len; i++)
+    for (int i = 0, text_len  = strlen(text); i < text_len; i++)
    {
         if (text[i] == '.' || text[i] == '?' || text[i] == '!')
         {
