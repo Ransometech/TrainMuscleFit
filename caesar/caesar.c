@@ -3,9 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-string ciphertext(string text);
+
+
 // Function prototypes
 bool is_digits(string s);
+string ciphertext(string text, int key);
+
 
 
 int main(int argc, string argv[])
@@ -33,4 +36,16 @@ bool is_digits(string key)
         }
     }
     return true;
+}
+string ciphertext(string text, int key)
+{
+    for (int i=0, text_len = strlen(text); i <text_len; i++){
+
+        if (text[i])
+
+
+    }
+
+    return 0;
+
 }
