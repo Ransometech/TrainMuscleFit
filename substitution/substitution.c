@@ -5,13 +5,13 @@
 #include <string.h>
 
 // Function prototypes
-bool alpha_digits(string s);
+bool alpha_key(string s);
 string ciphertext(string text, int key);
 
 int main(int argc, string argv[])
 {
 
-    if (argc != 2 || !alpha_digits(argv[1]))
+    if (argc != 2 || !alpha_key(argv[1]))
     {
         printf("Usage: ./substitution key\n");
         return 1;
@@ -23,7 +23,7 @@ int main(int argc, string argv[])
         return 1;
 
     }
-    
+
     else
     {
         int key = atoi(argv[1]);
@@ -40,11 +40,11 @@ int main(int argc, string argv[])
 }
 
 // Check if a string contains only digits
-bool alpha_digits(string key)
+bool alpha_key(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        if (!isdigit(key[i]))
+        if (!isalpha(key[i]))
         {
             return false;
         }
