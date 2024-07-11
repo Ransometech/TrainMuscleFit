@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // Function prototypes
 bool is_digits(string s);
 string ciphertext(string text, int key);
@@ -16,7 +15,6 @@ int main(int argc, string argv[])
     {
         printf("Usage: ./caesar key\n");
         return 1;
-
     }
 
     int key = atoi(argv[1]);
@@ -24,7 +22,6 @@ int main(int argc, string argv[])
 
     // Encrypt the plaintext
     ciphertext(plaintext, key);
-
 }
 
 // Check if a string contains only digits
@@ -43,9 +40,9 @@ bool is_digits(string key)
 // Encrypt the text
 string ciphertext(string text, int key)
 {
-    for (int i=0, text_len = strlen(text); i <text_len; i++)
+    for (int i = 0, text_len = strlen(text); i < text_len; i++)
     {
-        if isalpha(text[i])
+        if isalpha (text[i])
         {
             if (isupper(text[i]))
             {
@@ -57,11 +54,9 @@ string ciphertext(string text, int key)
                 text[i] = ((text[i] - 97 + key) % 26) + 97;
             }
         }
-
     }
     // Print the ciphertext
     printf("ciphertext: %s\n", text);
 
     return 0;
-
 }
