@@ -16,15 +16,16 @@ int main(void)
 
     // Count the number of letters, words, and sentences in the text
     int letters = count_letters(text);
-    int words = count_words(text);
+    float words = count_words(text);
     int sentences = count_sentences(text);
 
     printf("The text contains %d letters.\n", letters);
-    printf("The text contains %d words.\n", words);
     printf("The text contains %d sentences.\n", sentences);
 
     // Compute the Coleman-Liau index
-    float L = float(letters)/float(words) * 100;
+    float L = (letters/words) * 100;
+    float S = (sentence/words) * 100;
+
     // Print the grade level
 }
 
