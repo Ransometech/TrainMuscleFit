@@ -24,11 +24,11 @@ int calculate_score(string word)
 {
     int score = 0;
 
-    for (int i=0; wlen = strlen(word); i<wlen; i++))
+    for (int i = 0, len = strlen(word); i < len; i++)
     {
         if (isupper(word[i]))
         {
-            score = POINTs[word[i]-"A"];
+            score += POINTS[word[i] - 'A'];
         }
 
     }
