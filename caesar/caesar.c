@@ -11,7 +11,7 @@ int count_sentences(string text);
 
 int main(int argc, string argv[])
 {
-
+    if string[]
 
 }
 
