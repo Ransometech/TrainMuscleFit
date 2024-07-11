@@ -32,5 +32,6 @@ int calculate_score(string word)
         }
 
     }
+    return 3;
 
 }
