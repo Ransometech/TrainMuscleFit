@@ -5,7 +5,9 @@
 #include <string.h>
 
 // Function prototypes
-bool alpha_key(string s);
+bool alpha_key(string key);
+bool not_repeat(string key);
+
 string ciphertext(string text, int key);
 
 int main(int argc, string argv[])
@@ -18,6 +20,12 @@ int main(int argc, string argv[])
     }
 
     else if (!alpha_key(argv[1]))
+    {
+        printf("Key must only contain alphabetic characters\n");
+        return 1;
+    }
+
+    else if (!not_repeat(argv[1]))
     {
         printf("Key must only contain alphabetic characters\n");
         return 1;
@@ -57,6 +65,17 @@ bool alpha_key(string key)
     return true;
 }
 
+bool not_repeat(string key)
+{
+    for (int i = 0, len = strlen(key); i < len; i++)
+    {
+        if (!isalpha(key[i]))
+        {
+            return false;
+        }
+    }
+    return true;
+}
 // Encrypt the text
 string ciphertext(string text, int key)
 {
