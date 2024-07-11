@@ -29,7 +29,7 @@ int count_letters(string text)
     int count = 0;
     for (int i=0, text_len = strlen; i<text_len; i++)
     {
-        if i
+        if (text[i] =
     }
     // Return the number of letters in text
 }
