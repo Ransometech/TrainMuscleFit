@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
-#include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 // Function prototypes
@@ -17,6 +17,7 @@ int main(int argc, string argv[])
 
     }
     int key = atoi(argv[1]);
+    string plaintext = get_string("Plaintext: ")
 
     return 0;
 

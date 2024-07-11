@@ -3,6 +3,8 @@
     "files.associations": {
         "cs50.h": "c",
         "stdio.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c"
     }
 }
