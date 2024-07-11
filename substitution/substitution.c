@@ -27,7 +27,7 @@ int main(int argc, string argv[])
 
     else if (!not_repeat(argv[1]))
     {
-        printf("Key must only contain alphabetic characters\n");
+        printf("Key must not contain repeated characters\n");
         return 1;
     }
 
