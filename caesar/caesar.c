@@ -43,7 +43,7 @@ string ciphertext(string text, int key)
 
         if (isupper(text[i]))
         {
-            text[i] = text[i] + 5
+            text[i] = ((text[i] - 65 + key) % 26) + 65;
         }
 
 
