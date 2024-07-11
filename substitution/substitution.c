@@ -90,12 +90,12 @@ string ciphertext(string text, string key)
         {
             if (isupper(text[i]))
             {
-                text[i] = ((text[i] - 65 + key) % 26) + 65;
+                text[i] = key(text[i] - 65);
             }
 
             else if (islower(text[i]))
             {
-                text[i] = ((text[i] - 97 + key) % 26) + 97;
+                text[i] = key(text[i] - 97);
             }
         }
     }
