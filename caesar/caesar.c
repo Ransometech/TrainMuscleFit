@@ -41,7 +41,8 @@ string ciphertext(string text, int key)
 {
     for (int i=0, text_len = strlen(text); i <text_len; i++){
 
-        if (isupper(text[i])){
+        if (isupper(text[i]))
+        {
             text[i] = text[i] + 5
         }
 
