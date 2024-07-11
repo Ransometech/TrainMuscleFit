@@ -91,6 +91,7 @@ string ciphertext(string text, string key)
             if (isupper(text[i]))
             {
                 text[i] = key[text[i] - 65];
+                text[i] = toupper(text[i]);
             }
 
             else if (islower(text[i]))
