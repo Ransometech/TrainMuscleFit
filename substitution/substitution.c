@@ -26,7 +26,6 @@ int main(int argc, string argv[])
 
     else
     {
-        int key = atoi(argv[1]);
         string plaintext = get_string("Plaintext: ");
 
         // Encrypt the plaintext
