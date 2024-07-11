@@ -73,6 +73,7 @@ bool not_repeat(string key)
         {
             if (key[j]==key[i])
             {
+                printf("%c %c", key[j], key[i]);
 
                  return false;
             }
