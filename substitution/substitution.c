@@ -12,7 +12,8 @@ string ciphertext(string text, string key);
 
 int main(int argc, string argv[])
 {
-
+    
+    // Check for arguments
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
@@ -26,7 +27,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-
+    // Check for duplicate characters
     else if (!not_repeat(argv[1]))
     {
         printf("Key must not contain repeated characters\n");
