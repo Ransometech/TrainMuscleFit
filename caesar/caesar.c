@@ -39,11 +39,19 @@ bool is_digits(string key)
 }
 string ciphertext(string text, int key)
 {
-    for (int i=0, text_len = strlen(text); i <text_len; i++){
-
-        if (isupper(text[i]))
+    for (int i=0, text_len = strlen(text); i <text_len; i++)
+    {
+        if isalpha(text[i])
         {
-            text[i] = ((text[i] - 65 + key) % 26) + 65;
+            if (isupper(text[i]))
+            {
+                text[i] = ((text[i] - 65 + key) % 26) + 65;
+            }
+
+            else if (isupper(text[i]))
+            {
+                text[i] = ((text[i] - 65 + key) % 26) + 65;
+            }
         }
 
 
