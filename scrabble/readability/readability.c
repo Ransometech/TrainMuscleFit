@@ -21,8 +21,9 @@ int main(void)
     printf("The text contains %d letters.\n", letters);
     printf("The text contains %d words.\n", words);
     printf("The text contains %d sentences.\n", sentences);
-    // Compute the Coleman-Liau index
 
+    // Compute the Coleman-Liau index
+    int L = 
     // Print the grade level
 }
 
