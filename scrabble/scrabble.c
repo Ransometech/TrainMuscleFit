@@ -11,13 +11,25 @@ int main(void)
     // Prompt the Players for two words
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
-    printf("%d", word1['B']);
 
      // Calculate the score of each word
     int score1 = calculate_score(word1);
     int score2 = calculate_score(word2);
 
-      // Print the winner
+    // Print the winner
+    if (score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if (score1 < score2)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
+
 
 
 
