@@ -43,7 +43,7 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
 
         // Encrypt the plaintext
-        //ciphertext(plaintext, key);
+        ciphertext(plaintext, key);
     }
 
 
@@ -90,12 +90,12 @@ string ciphertext(string text, string key)
         {
             if (isupper(text[i]))
             {
-                text[i] = key(text[i] - 65);
+                text[i] = key[text[i] - 65];
             }
 
             else if (islower(text[i]))
             {
-                text[i] = key(text[i] - 97);
+                text[i] = key[text[i] - 97];
             }
         }
     }
