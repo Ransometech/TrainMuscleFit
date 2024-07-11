@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// Function prototypes
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -23,7 +24,7 @@ int main(void)
     printf("The text contains %d sentences.\n", sentences);
 
     // Compute the Coleman-Liau index
-    int L = 
+    int L =
     // Print the grade level
 }
 
