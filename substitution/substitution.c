@@ -16,6 +16,11 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    else if (strlen(argv[1]) != 26)
+    (
+        printf("Usage: ./substitution key\n");
+
+    )
 
     int key = atoi(argv[1]);
     string plaintext = get_string("Plaintext: ");
