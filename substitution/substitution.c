@@ -12,7 +12,7 @@ string ciphertext(string text, string key);
 
 int main(int argc, string argv[])
 {
-    
+
     // Check for arguments
     if (argc != 2)
     {
@@ -39,9 +39,7 @@ int main(int argc, string argv[])
     {
         printf("Key must contain 26 characters\n");
         return 1;
-
     }
-
 
     else
     {
@@ -50,11 +48,6 @@ int main(int argc, string argv[])
         // Encrypt the plaintext
         ciphertext(plaintext, argv[1]);
     }
-
-
-
-
-
 }
 
 // Check if the key contains only alphabetic characters
@@ -75,7 +68,7 @@ bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        for (int j = 1+i; j < len; j++)
+        for (int j = 1 + i; j < len; j++)
         {
             if (key[j] == key[i])
             {
@@ -83,7 +76,6 @@ bool not_repeat(string key)
 
                  return false;
             }
-
         }
     }
     return true;
