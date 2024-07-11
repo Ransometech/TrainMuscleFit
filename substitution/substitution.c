@@ -43,7 +43,7 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
 
         // Encrypt the plaintext
-        ciphertext(plaintext, key);
+        ciphertext(plaintext, argv[1]);
     }
 
 
