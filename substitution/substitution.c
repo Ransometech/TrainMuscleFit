@@ -52,7 +52,7 @@ int main(int argc, string argv[])
 
 }
 
-// Check if a string contains only digits
+// Check if a string contains only alphabet
 bool alpha_key(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
@@ -69,9 +69,9 @@ bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        for (int j = 1; j < len; j++)
+        for (int j = 1+i; j < len; j++)
         {
-            if (key[j+i] == key[i])
+            if (key[j] == key[i])
             {
                 printf("%c %c", key[j], key[i]);
 
@@ -97,6 +97,7 @@ string ciphertext(string text, string key)
             else if (islower(text[i]))
             {
                 text[i] = key[text[i] - 97];
+                text[i] = tolower(text[i]);
             }
         }
     }
