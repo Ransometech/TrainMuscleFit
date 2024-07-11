@@ -69,9 +69,14 @@ bool not_repeat(string key)
 {
     for (int i = 0, len = strlen(key); i < len; i++)
     {
-        if (!isalpha(key[i]))
+        for (int j = 0, len = strlen(key); j < len; j++)
         {
-            return false;
+            if (key[j]==key[i])
+            {
+
+                 return false;
+            }
+
         }
     }
     return true;
