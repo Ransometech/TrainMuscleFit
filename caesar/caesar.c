@@ -10,7 +10,7 @@ bool is_digits(string s);
 
 int main(int argc, string argv[])
 {
-    if (argc != 2  || !isdigit(argv[1]))
+    if (argc != 2 || !is_digits(argv[1]))
     {
         printf("Usage: ./caesar key\n");
         return 1;
@@ -20,11 +20,11 @@ int main(int argc, string argv[])
 
 }
 
-bool is_digits(string s)
+bool is_digits(string key)
 {
-    for (int i = 0, len = strlen(s); i < len; i++)
+    for (int i = 0, len = strlen(key); i < len; i++)
     {
-        if (!isdigit(s[i]))
+        if (!isdigit(key[i]))
         {
             return false;
         }
