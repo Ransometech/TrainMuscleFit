@@ -49,7 +49,7 @@ int count_words(string text)
 {
     // Return the number of words in text
     int count = 0;
-    for (int i = 0, text_len = strlen(text); i < text_len; i++)
+    for (int i = 0, text_len =strlen(text); i < text_len; i++)
    {
         if (text[i] == ' ')
         {
