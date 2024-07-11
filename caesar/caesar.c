@@ -5,7 +5,7 @@
 #include <string.h>
 
 // Function prototypes
-bool is_digits(string s);
+bool is_digits(string key);
 string ciphertext(string text, int key);
 
 int main(int argc, string argv[])
