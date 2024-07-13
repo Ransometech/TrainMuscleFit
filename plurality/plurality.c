@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -22,6 +23,7 @@ int candidate_count;
 bool vote(string name);
 void print_winner(void);
 void bubble_sort(void);
+bool alpha_names(string s);
 
 
 int main(int argc, string argv[])
