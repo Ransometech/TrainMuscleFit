@@ -96,11 +96,14 @@ void bubble_sort(void)
     {
         for (int j =0; j < candidate_count-2; j++)
         {
-            if (candidates[j].votes > candidates[i+1].votes)
+            if (candidates[j].votes < candidates[i+1].votes)
             {
                 int store_vote = candidates[j].votes;
+                string store_names = candidates[j].name;
                 candidates[j].votes = candidates[j+1].votes;
                 candidates[j+1].votes = store_vote;
+                candidates[j].name = candidates[j+1].name;
+                candidates[j+1].name = string store_names;
 
             }
         }
