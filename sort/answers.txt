@@ -1,10 +1,10 @@
 sort1 uses: Bubble sort
 
-How do you know?: Sort 2 already uses merge sort because when i use each sort for random10000, sort2 was the fastest, merge sort reuqire less time to sort random numbers. also bubble sort will not try to sort an already sorted number, selectiom sort will still loop through and try to sort which will require more time than bubble sort
-sort2 uses: TODO
+How do you know?: It doesn't waste time sorting an already sorted list.
+sort2 uses:  Merge Sort
 
-How do you know?: TODO
+How do you know?: It was the fastest for sorting 10,000 random numbers, which is typical for merge sort.
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: It always loops through the list, even if it's already sorted, making it slower in such cases.
