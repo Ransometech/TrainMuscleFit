@@ -142,6 +142,15 @@ void tabulate(void)
     // TODO
     for (int i=0; i<voter_count; i++)
     {
+        int j = 0
+        for (j=0; j<candidate_count; j++)
+        {
+            if (candidates[preferences[i][0]].eliminated==true)
+            {
+
+            }
+
+        }
         int preferred = preferences[i][0];
         candidates[preferred].votes++;
 
