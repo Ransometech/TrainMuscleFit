@@ -4,12 +4,11 @@
 
 // Max number of candidates
 #define MAX 9
-#define MAX_NAME_LENGTH 50
 
 // Candidates have name and vote count
 typedef struct
 {
-    char name[MAX_NAME_LENGTH];
+    string name;
     int votes;
 } candidate;
 
@@ -23,6 +22,7 @@ int candidate_count;
 bool vote(string name);
 void print_winner(void);
 void bubble_sort(void);
+
 
 int main(int argc, string argv[])
 {
@@ -42,9 +42,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        // Properly copy the candidate names and initialize votes
-        strncpy(candidates[i].name, argv[i + 1], MAX_NAME_LENGTH - 1);
-        candidates[i].name[MAX_NAME_LENGTH - 1] = '\0';  // Ensure null-termination
+        candidates[i].name = argv[i + 1];
         candidates[i].votes = 0;
     }
 
@@ -69,11 +67,12 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    for (int i = 0; i < candidate_count; i++)
+    // TODO
+    for (int i=0; i < candidate_count; i++)
     {
-        if (strcmp(candidates[i].name, name) == 0)
+        if(strcmp(candidates[i].name, name)==0)
         {
-            candidates[i].votes += 1;
+            candidates[i].votes+= 1;
             return true;
         }
     }
@@ -83,42 +82,49 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+
     // Sort votes from high to low
     bubble_sort();
 
-    // Find the highest vote count
-    int highest_votes = candidates[0].votes;
-
-    // Print all candidates with the highest vote count
-    for (int i = 0; i < candidate_count; i++)
+    // Print winner
+    for (int i=0; i < candidate_count-1; i++)
     {
-        if (candidates[i].votes == highest_votes)
+        printf("%s\n", candidates[i].name);
+        if (candidates[i].votes > candidates[i+1].votes)
         {
-            printf("%s\n", candidates[i].name);
+            return;
         }
+
     }
+    return;
 }
 
 // Sort votes from high to low
 void bubble_sort(void)
 {
-    for (int i = 0; i < candidate_count - 1; i++)
+    for (int i=0; i<candidate_count-1;i++)
     {
-        for (int j = 0; j < candidate_count - 1 - i; j++)
+        for (int j =0; j < candidate_count-2; j++)
         {
-            if (candidates[j].votes < candidates[j + 1].votes)
+            if (candidates[j].votes < candidates[j+1].votes)
             {
-                // Swap votes
                 int store_vote = candidates[j].votes;
+                char store_names[MAX];
+
+                // Copy the name to store_names
+                strcpy(store_names, candidates[j].name);
+
+                // Swap votes
                 candidates[j].votes = candidates[j + 1].votes;
                 candidates[j + 1].votes = store_vote;
 
-                // Swap names using a temporary array
-                char store_name[MAX_NAME_LENGTH];
-                strcpy(store_name, candidates[j].name);
+                // Swap names
                 strcpy(candidates[j].name, candidates[j + 1].name);
-                strcpy(candidates[j + 1].name, store_name);
+                strcpy(candidates[j + 1].name, store_names);
+
             }
         }
+
     }
+
 }
