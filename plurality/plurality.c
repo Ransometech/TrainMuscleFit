@@ -32,7 +32,7 @@ int main(int argc, string argv[])
         printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
- 
+
     // Populate array of candidates
     candidate_count = argc - 1;
     if (candidate_count > MAX)
@@ -87,12 +87,12 @@ void print_winner(void)
     bubble_sort();
 
     // Print winner
+    int highest_votes = candidates[0].votes;
     for (int i=0; i < candidate_count; i++)
     {
-        printf("%s\n", candidates[i].name);
-        if (candidates[i].votes > candidates[i+1].votes)
+        if (candidates[i].votes == highest_votes)
         {
-            return;
+            printf("%s\n", candidates[i].name);
         }
 
     }
