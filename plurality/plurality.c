@@ -42,6 +42,7 @@ int main(int argc, string argv[])
     }
     for (int i = 0; i < candidate_count; i++)
     {
+        // Properly copy the candidate names and initialize votes
         strncpy(candidates[i].name, argv[i + 1], MAX_NAME_LENGTH - 1);
         candidates[i].name[MAX_NAME_LENGTH - 1] = '\0';  // Ensure null-termination
         candidates[i].votes = 0;
