@@ -162,7 +162,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    for 
+    for
     return false;
 }
 
@@ -185,4 +185,30 @@ void eliminate(int min)
 {
     // TODO
     return;
+}
+
+void bubble_sort(void)
+{
+    for (int i = 0; i < candidate_count - 1; i++)
+    {
+        for (int j = 0; j < candidate_count - 1 - i; j++)
+        {
+            if (candidates[j].votes < candidates[j + 1].votes)
+            {
+                int store_vote = candidates[j].votes;
+                char store_names[MAX];
+
+                // Copy the name to store_names
+                string store_name = candidates[j].name;
+
+                // Swap votes
+                candidates[j].votes = candidates[j + 1].votes;
+                candidates[j + 1].votes = store_vote;
+
+                // Swap names
+                candidates[j].name = candidates[j + 1].name;
+                candidates[j + 1].name = store_name;
+            }
+        }
+    }
 }
