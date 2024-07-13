@@ -1,5 +1,4 @@
 #include <cs50.h>
-#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -23,7 +22,6 @@ int candidate_count;
 bool vote(string name);
 void print_winner(void);
 void bubble_sort(void);
-bool alpha_names(string s);
 
 
 int main(int argc, string argv[])
@@ -40,19 +38,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
-
     // Populate array of candidates
     candidate_count = argc - 1;
-
-    for (int i = 0; i < argc-1; i++)
-    {
-        if (alpha_names(argv[i]) == false)
-        {
-            printf("Usage: plurality [invalid candidates ]\n");
-            return 1;
-        }
-    }
-
     if (candidate_count > MAX)
     {
         printf("Maximum number of candidates is %i\n", MAX);
@@ -82,17 +69,6 @@ int main(int argc, string argv[])
     print_winner();
 }
 
-bool alpha_names(string s)
-{
-    for (int i = 0, n = strlen(s); i < n; i++)
-    {
-        if (!isalpha(s[i]))
-        {
-            return false;
-        }
-    }
-    return true;
-}
 // Update vote totals given a new vote
 bool vote(string name)
 {
@@ -127,6 +103,7 @@ void print_winner(void)
     }
     return;
 }
+
 
 // Sort votes from high to low
 void bubble_sort(void)
