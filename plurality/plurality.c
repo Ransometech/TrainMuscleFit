@@ -105,7 +105,7 @@ void bubble_sort(void)
 {
     for (int i=0; i<candidate_count-1;i++)
     {
-        for (int j =0; j < candidate_count-2; j++)
+        for (int j =0; j < candidate_count-1-i; j++)
         {
             if (candidates[j].votes < candidates[j+1].votes)
             {
