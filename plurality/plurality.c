@@ -32,6 +32,11 @@ int main(int argc, string argv[])
         printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
+    if (argc < 2)
+    {
+        printf("Usage: plurality [candidate ...]\n");
+        return 1;
+    }
 
     // Populate array of candidates
     candidate_count = argc - 1;
@@ -98,6 +103,7 @@ void print_winner(void)
     }
     return;
 }
+bool valid_names(candidates)
 
 // Sort votes from high to low
 void bubble_sort(void)
