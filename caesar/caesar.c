@@ -16,7 +16,8 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
 
-    for (int i<0; in
+    for (int i=0; i
+
     }
 
     int key = atoi(argv[1]);
