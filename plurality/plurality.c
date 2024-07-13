@@ -44,7 +44,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < argc-1; i++)
     {
-        if (is_alpha_names(argv[i]) == false)
+        if (alpha_names(argv[i]) == false)
         {
             printf("Usage: plurality [candidate ...]\n");
             return 1;
@@ -80,7 +80,16 @@ int main(int argc, string argv[])
     print_winner();
 }
 
-
+bool alpha_names(string s)
+{
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        if (!isalpha(s[i]))
+        {
+            return false;
+        }
+    }
+    return true;
 
 // Update vote totals given a new vote
 bool vote(string name)
