@@ -87,7 +87,7 @@ void print_winner(void)
     bubble_sort();
 
     // Print winner
-    for (int i=0; i < candidate_count-1; i++)
+    for (int i=0; i < candidate_count; i++)
     {
         printf("%s\n", candidates[i].name);
         if (candidates[i].votes > candidates[i+1].votes)
