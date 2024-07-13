@@ -21,6 +21,8 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
+void bubble_sort(void)
+
 
 int main(int argc, string argv[])
 {
@@ -66,7 +68,7 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    for (int i=0; i<candidate_count; i++)
+    for (int i=0; i<candidate_count-1; i++)
     {
         if(strcmp(candidates[i].name, name)==0)
         {
@@ -83,7 +85,17 @@ void print_winner(void)
     // Print winner
     for (int i=0; i < candidate_count; i++)
     {
-        
+
     }
     return;
+}
+
+void bubble_sort(void)
+{
+    for (int i=0; i<candidate_count-1;i++)
+    {
+        for (int j =0; j < candidate_count-2; j++)
+
+    }
+
 }
