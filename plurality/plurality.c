@@ -9,7 +9,7 @@
 // Candidates have name and vote count
 typedef struct
 {
-    string name;
+    char name[MAX_NAME_LENGTH];
     int votes;
 } candidate;
 
@@ -42,7 +42,8 @@ int main(int argc, string argv[])
     }
     for (int i = 0; i < candidate_count; i++)
     {
-        candidates[i].name = argv[i + 1];
+        strncpy(candidates[i].name, argv[i + 1], MAX_NAME_LENGTH - 1);
+        candidates[i].name[MAX_NAME_LENGTH - 1] = '\0';  // Ensure null-termination
         candidates[i].votes = 0;
     }
 
