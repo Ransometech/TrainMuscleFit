@@ -38,8 +38,15 @@ int main(int argc, string argv[])
         return 1;
     }
 
+
     // Populate array of candidates
     candidate_count = argc - 1;
+
+    for (int i=0; i<candidate_count; i++)
+    {
+        
+    }
+
     if (candidate_count > MAX)
     {
         printf("Maximum number of candidates is %i\n", MAX);
@@ -103,7 +110,6 @@ void print_winner(void)
     }
     return;
 }
-bool valid_names(candidates)
 
 // Sort votes from high to low
 void bubble_sort(void)
