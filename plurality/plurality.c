@@ -92,7 +92,7 @@ bool alpha_names(string s)
         }
     }
     return true;
-
+}
 // Update vote totals given a new vote
 bool vote(string name)
 {
