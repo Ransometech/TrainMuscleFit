@@ -82,11 +82,15 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+
+    // Sort votes from high to low
+    bubble_sort();
+
     // Print winner
     for (int i=0; i < candidate_count-1; i++)
     {
         printf("%s/n", candidates[i].name);
-        if (candidates[i].votes>candidates[i+1].votes)
+        if (candidates[i].votes > candidates[i+1].votes)
         {
             return;
         }
@@ -95,9 +99,9 @@ void print_winner(void)
     return;
 }
 
+// Sort votes from high to low
 void bubble_sort(void)
 {
-    string store_names;
     for (int i=0; i<candidate_count-1;i++)
     {
         for (int j =0; j < candidate_count-2; j++)
@@ -105,11 +109,18 @@ void bubble_sort(void)
             if (candidates[j].votes < candidates[i+1].votes)
             {
                 int store_vote = candidates[j].votes;
-                store_names = candidates[j].name;
-                candidates[j].votes = candidates[j+1].votes;
-                candidates[j+1].votes = store_vote;
-                candidates[j].name = candidates[j+1].name;
-                candidates[j+1].name = string store_names;
+                char store_names[9];
+
+                // Copy the name to store_names
+                strcpy(store_names, candidates[j].name);
+
+                // Swap votes
+                candidates[j].votes = candidates[j + 1].votes;
+                candidates[j + 1].votes = store_vote;
+
+                // Swap names
+                strcpy(candidates[j].name, candidates[j + 1].name);
+                strcpy(candidates[j + 1].name, store_names);
 
             }
         }
