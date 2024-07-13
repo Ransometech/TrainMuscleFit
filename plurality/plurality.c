@@ -23,7 +23,6 @@ bool vote(string name);
 void print_winner(void);
 void bubble_sort(void);
 
-
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -67,12 +66,11 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
-    for (int i=0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(candidates[i].name, name)==0)
+        if (strcmp(candidates[i].name, name) == 0)
         {
-            candidates[i].votes+= 1;
+            candidates[i].votes += 1;
             return true;
         }
     }
@@ -82,49 +80,41 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-
     // Sort votes from high to low
     bubble_sort();
 
-    // Print winner
-    for (int i=0; i < candidate_count-1; i++)
-    {
-        printf("%s\n", candidates[i].name);
-        if (candidates[i].votes > candidates[i+1].votes)
-        {
-            return;
-        }
+    // Print winner(s)
+    int highest_votes = candidates[0].votes;
 
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == highest_votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
     }
-    return;
 }
 
 // Sort votes from high to low
 void bubble_sort(void)
 {
-    for (int i=0; i<candidate_count-1;i++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
-        for (int j =0; j < candidate_count-2; j++)
+        for (int j = 0; j < candidate_count - 1 - i; j++)
         {
-            if (candidates[j].votes < candidates[j+1].votes)
+            if (candidates[j].votes < candidates[j + 1].votes)
             {
-                int store_vote = candidates[j].votes;
-                char store_names[9];
-
-                // Copy the name to store_names
-                strcpy(store_names, candidates[j].name);
-
                 // Swap votes
+                int store_vote = candidates[j].votes;
                 candidates[j].votes = candidates[j + 1].votes;
                 candidates[j + 1].votes = store_vote;
 
-                // Swap names
+                // Swap names using a temporary array
+                char store_name[MAX_NAME_LENGTH];
+                strcpy(store_name, candidates[j].name);
                 strcpy(candidates[j].name, candidates[j + 1].name);
-                strcpy(candidates[j + 1].name, store_names);
-
+                strcpy(candidates[j + 1].name, store_name);
             }
         }
-
     }
-
 }
