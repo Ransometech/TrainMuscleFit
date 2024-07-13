@@ -102,22 +102,26 @@ void print_winner(void)
 // Sort votes from high to low
 void bubble_sort(void)
 {
-    for (int i = 0; i < candidate_count - 1; i++)
+    for (int i=0; i<candidate_count-1;i++)
     {
-        for (int j = 0; j < candidate_count - 1 - i; j++)
+        for (int j =0; j < candidate_count-i-1; j++)
         {
-            if (candidates[j].votes < candidates[j + 1].votes)
+            if (candidates[j].votes < candidates[j+1].votes)
             {
-                // Swap votes
                 int store_vote = candidates[j].votes;
+                char store_names[9];
+
+                // Copy the name to store_names
+                strcpy(store_names, candidates[j].name);
+
+                // Swap votes
                 candidates[j].votes = candidates[j + 1].votes;
                 candidates[j + 1].votes = store_vote;
 
-                // Swap names using a temporary array
-                char store_name[MAX_NAME_LENGTH];
-                strcpy(store_name, candidates[j].name);
+                // Swap names
                 strcpy(candidates[j].name, candidates[j + 1].name);
-                strcpy(candidates[j + 1].name, store_name);
+                strcpy(candidates[j + 1].name, store_names);
+
             }
         }
 
