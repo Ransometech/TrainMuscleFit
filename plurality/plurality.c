@@ -21,7 +21,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
-void bubble_sort(void)
+void bubble_sort(void);
 
 
 int main(int argc, string argv[])
@@ -85,7 +85,7 @@ void print_winner(void)
     // Print winner
     for (int i=0; i < candidate_count-1; i++)
     {
-        printf("%s/n", candidates[i].name)
+        printf("%s/n", candidates[i].name);
         if (candidates[i].votes>candidates[i+1].votes)
         {
             return;
