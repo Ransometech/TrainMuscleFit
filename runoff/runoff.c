@@ -30,7 +30,7 @@ bool print_winner(void);
 int find_min(void);
 bool is_tie(int min);
 void eliminate(int min);
-
+void bubble_sort(void);
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -162,7 +162,6 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    for
     return false;
 }
 
@@ -186,7 +185,6 @@ void eliminate(int min)
     // TODO
     return;
 }
-
 void bubble_sort(void)
 {
     for (int i = 0; i < candidate_count - 1; i++)
@@ -196,7 +194,6 @@ void bubble_sort(void)
             if (candidates[j].votes < candidates[j + 1].votes)
             {
                 int store_vote = candidates[j].votes;
-                char store_names[MAX];
 
                 // Copy the name to store_names
                 string store_name = candidates[j].name;
@@ -212,3 +209,4 @@ void bubble_sort(void)
         }
     }
 }
+

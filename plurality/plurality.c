@@ -104,9 +104,10 @@ void bubble_sort(void)
     {
         for (int j = 0; j < candidate_count - 1 - i; j++)
         {
-            if (candidates[j].votes < candidates[j + 1].votes)
+            if (candidates[j].votes < candidates[j+1].votes)
             {
                 int store_vote = candidates[j].votes;
+                char store_names[MAX];
 
                 // Copy the name to store_names
                 string store_name = candidates[j].name;
@@ -118,7 +119,10 @@ void bubble_sort(void)
                 // Swap names
                 candidates[j].name = candidates[j + 1].name;
                 candidates[j + 1].name = store_name;
+
             }
         }
+
     }
+
 }
