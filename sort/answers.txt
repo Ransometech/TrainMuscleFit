@@ -1,7 +1,6 @@
 sort1 uses: Bubble sort
 
-How do you know?: TODO
-
+How do you know?: Sort 2 already uses merge sort because when i use each sort for random10000, sort2 was the fastest, merge sort reuqire less time to sort random numbers. also bubble sort will not try to sort an already sorted number, selectiom sort will still loop through and try to sort which will require more time than selection
 sort2 uses: TODO
 
 How do you know?: TODO
