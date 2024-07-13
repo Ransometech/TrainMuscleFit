@@ -109,7 +109,7 @@ void bubble_sort(void)
             if (candidates[j].votes < candidates[j+1].votes)
             {
                 int store_vote = candidates[j].votes;
-                char store_names[9];
+                char store_names[MAX];
 
                 // Copy the name to store_names
                 strcpy(store_names, candidates[j].name);
