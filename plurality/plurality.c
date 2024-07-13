@@ -32,12 +32,7 @@ int main(int argc, string argv[])
         printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
-    if (argc < 2)
-    {
-        printf("Usage: plurality [candidate ...]\n");
-        return 1;
-    }
-
+ 
     // Populate array of candidates
     candidate_count = argc - 1;
     if (candidate_count > MAX)
