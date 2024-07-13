@@ -142,7 +142,7 @@ void tabulate(void)
     // TODO
     for (int i=0; i<voter_count; i++)
     {
-        
+        int prefered = preferences[voter][rank]
     }
     return;
 }
