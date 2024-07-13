@@ -107,7 +107,6 @@ void bubble_sort(void)
             if (candidates[j].votes < candidates[j + 1].votes)
             {
                 int store_vote = candidates[j].votes;
-                char store_names[MAX];
 
                 // Copy the name to store_names
                 string store_name = candidates[j].name;
