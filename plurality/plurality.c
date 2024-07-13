@@ -113,15 +113,15 @@ void bubble_sort(void)
                 char store_names[MAX];
 
                 // Copy the name to store_names
-                strcpy(store_names, candidates[j].name);
+                string store_name = candidates[j].name;
 
                 // Swap votes
                 candidates[j].votes = candidates[j + 1].votes;
                 candidates[j + 1].votes = store_vote;
 
                 // Swap names
-                strcpy(candidates[j].name, candidates[j + 1].name);
-                strcpy(candidates[j + 1].name, store_names);
+                candidates[j].name = candidates[j + 1].name;
+                candidates[j + 1].name = store_name;
 
             }
         }
