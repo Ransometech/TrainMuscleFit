@@ -97,6 +97,7 @@ void print_winner(void)
 
 void bubble_sort(void)
 {
+    string store_names;
     for (int i=0; i<candidate_count-1;i++)
     {
         for (int j =0; j < candidate_count-2; j++)
@@ -104,7 +105,7 @@ void bubble_sort(void)
             if (candidates[j].votes < candidates[i+1].votes)
             {
                 int store_vote = candidates[j].votes;
-                string store_names = candidates[j].name;
+                store_names = candidates[j].name;
                 candidates[j].votes = candidates[j+1].votes;
                 candidates[j+1].votes = store_vote;
                 candidates[j].name = candidates[j+1].name;
