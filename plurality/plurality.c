@@ -96,11 +96,11 @@ void bubble_sort(void)
     {
         for (int j =0; j < candidate_count-2; j++)
         {
-            if (candidates[i].votes > candidates[i+1].votes)
+            if (candidates[j].votes > candidates[i+1].votes)
             {
-                int store_vote = candidates[i].votes;
-                candidates[i].votes = candidates[i+1].votes;
-                candidates[i+1].votes = store_vote;
+                int store_vote = candidates[j].votes;
+                candidates[j].votes = candidates[j+1].votes;
+                candidates[j+1].votes = store_vote;
 
             }
         }
