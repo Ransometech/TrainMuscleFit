@@ -23,7 +23,6 @@ bool vote(string name);
 void print_winner(void);
 void bubble_sort(void);
 
-
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -68,11 +67,11 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    for (int i=0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(candidates[i].name, name)==0)
+        if (strcmp(candidates[i].name, name) == 0)
         {
-            candidates[i].votes+= 1;
+            candidates[i].votes += 1;
             return true;
         }
     }
@@ -88,26 +87,24 @@ void print_winner(void)
 
     // Print winner
     int highest_votes = candidates[0].votes;
-    for (int i=0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == highest_votes)
         {
             printf("%s\n", candidates[i].name);
         }
-
     }
     return;
 }
 
-
 // Sort votes from high to low
 void bubble_sort(void)
 {
-    for (int i=0; i<candidate_count-1;i++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
-        for (int j =0; j < candidate_count-1-i; j++)
+        for (int j = 0; j < candidate_count - 1 - i; j++)
         {
-            if (candidates[j].votes < candidates[j+1].votes)
+            if (candidates[j].votes < candidates[j + 1].votes)
             {
                 int store_vote = candidates[j].votes;
                 char store_names[MAX];
@@ -122,10 +119,7 @@ void bubble_sort(void)
                 // Swap names
                 candidates[j].name = candidates[j + 1].name;
                 candidates[j + 1].name = store_name;
-
             }
         }
-
     }
-
 }
