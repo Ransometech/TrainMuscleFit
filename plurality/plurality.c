@@ -42,11 +42,11 @@ int main(int argc, string argv[])
     // Populate array of candidates
     candidate_count = argc - 1;
 
-    for (int i=0; i<candidate_count; i++)
+    for (int i = 0; i < argc-1; i++)
     {
-        if (isapha(argv[i]) = false)
+        if (is_alpha_names(argv[i]) == false)
         {
-            printf("Usage: plurality [candidate invalid names]\n");
+            printf("Usage: plurality [candidate ...]\n");
             return 1;
         }
     }
@@ -79,6 +79,8 @@ int main(int argc, string argv[])
     // Display winner of election
     print_winner();
 }
+
+
 
 // Update vote totals given a new vote
 bool vote(string name)
