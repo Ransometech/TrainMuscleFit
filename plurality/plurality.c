@@ -44,7 +44,11 @@ int main(int argc, string argv[])
 
     for (int i=0; i<candidate_count; i++)
     {
-        
+        if (isapha(argv[i]) = false)
+        {
+            printf("Usage: plurality [candidate invalid names]\n");
+            return 1;
+        }
     }
 
     if (candidate_count > MAX)
