@@ -48,7 +48,7 @@ int main(int argc, string argv[])
     {
         if (alpha_names(argv[i]) == false)
         {
-            printf("Usage: plurality [candidate ...]\n");
+            printf("Usage: plurality [invalid candidates ...]\n");
             return 1;
         }
     }
