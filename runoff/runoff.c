@@ -177,7 +177,7 @@ bool print_winner(void)
 int find_min(void)
 {
     // Find min number of votes
-    int min = -1;
+    int min = 100;
 
     // Loop through each candidate
     for (int i = 0; i < candidate_count; i++)
