@@ -70,10 +70,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
+#include <cs50.h>
+#include <stdio.h>
+#include "helpers.h"
+
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Create temporary image to store the blurred value
+    // Create a temporary image to store the blurred values
     RGBTRIPLE temp[height][width];
 
     // Apply blur filter to the image
@@ -92,7 +96,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int newI = i + di;
                     int newJ = j + dj;
 
-                    // Check if surrounding pixel is within the image bounds
+                    // Check if the surrounding pixel is within the image bounds
                     if (newI >= 0 && newI < height && newJ >= 0 && newJ < width)
                     {
                         redSum += image[newI][newJ].rgbtRed;
@@ -109,4 +113,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j].rgbtBlue = blueSum / count;
         }
     }
+
+    // Copy the blurred values back to the original image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp[i][j];
+        }
+    }
 }
+
