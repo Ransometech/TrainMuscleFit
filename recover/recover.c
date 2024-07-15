@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[512];
 
-    FILE *img = NULL;
+    FILE *new_img = NULL;
     int count = 0;
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
@@ -26,16 +26,16 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             // Close the previous JPEG
-            if (img != NULL)
+            if (new_img != NULL)
             {
-                fclose(img);
+                fclose(new_img);
             }
 
             // Create a JPEG file
             char jpeg_file[8];
             sprintf(jpeg_file, "%03i.jpg", count);
-            img = fopen(jpeg_file, "w");
-            if (img == NULL)
+            new_img = fopen(jpeg_file, "w");
+            if (new_img == NULL)
             {
                 printf("Could not create file.\n");
                 return 1;
@@ -44,16 +44,16 @@ int main(int argc, char *argv[])
         }
 
         // Write to the JPEG file if it has been opened
-        if (img != NULL)
+        if (new_img != NULL)
         {
-            fwrite(buffer, 1, 512, img);
+            fwrite(buffer, 1, 512, new_img);
         }
     }
 
-    // Close any remaining open files
-    if (img != NULL)
+    // Close any remaining files
+    if (new_img != NULL)
     {
-        fclose(img);
+        fclose(new_img);
     }
     fclose(card);
 
