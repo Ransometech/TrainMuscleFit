@@ -4,7 +4,7 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-     // Convert each pixel to grayscale
+    // Convert each pixel to grayscale
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -28,7 +28,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-     // Apply sepia filter to the image
+    // Apply sepia filter to the image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -45,7 +45,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             // Assign sepia colors to pixel
-             pixel->rgbtRed = (sepiaRed > 255) ? 255 : sepiaRed;
+            pixel->rgbtRed = (sepiaRed > 255) ? 255 : sepiaRed;
             pixel->rgbtGreen = (sepiaGreen > 255) ? 255 : sepiaGreen;
             pixel->rgbtBlue = (sepiaBlue > 255) ? 255 : sepiaBlue;
         }
@@ -70,7 +70,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -82,7 +81,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int redSum = 0, greenSum = 0, blueSum = 0;
+            int sum_red = 0, sum_green = 0, sum_blue = 0;
             int count = 0;
 
             // Sum up the values of the surrounding pixels
@@ -96,18 +95,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // Check if the surrounding pixel is within the image bounds
                     if (newI >= 0 && newI < height && newJ >= 0 && newJ < width)
                     {
-                        redSum += image[newI][newJ].rgbtRed;
-                        greenSum += image[newI][newJ].rgbtGreen;
-                        blueSum += image[newI][newJ].rgbtBlue;
+                        sum_red += image[newI][newJ].rgbtRed;
+                        sum_green += image[newI][newJ].rgbtGreen;
+                        sum_blue += image[newI][newJ].rgbtBlue;
                         count++;
                     }
                 }
             }
 
             // Calculate the average color value and round it
-            temp[i][j].rgbtRed = round((float)redSum / count);
-            temp[i][j].rgbtGreen = round((float)greenSum / count);
-            temp[i][j].rgbtBlue = round((float)blueSum / count);
+            temp[i][j].rgbtRed = round((float) sum_red / count);
+            temp[i][j].rgbtGreen = round((float) sum_green / count);
+            temp[i][j].rgbtBlue = round((float) sum_blue / count);
         }
     }
 
@@ -120,4 +119,3 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
-
