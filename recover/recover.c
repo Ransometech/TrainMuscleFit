@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
 
     FILE *img = NULL;
-    int file_count = 0;
+    int count = 0;
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
     {
@@ -32,15 +32,15 @@ int main(int argc, char *argv[])
             }
 
             // Create a JPEG file
-            char filename[8];
-            sprintf(filename, "%03i.jpg", file_count);
-            img = fopen(filename, "w");
+            char jpeg_file[8];
+            sprintf(jpeg_file, "%03i.jpg", count);
+            img = fopen(jpeg_file, "w");
             if (img == NULL)
             {
                 printf("Could not create file.\n");
                 return 1;
             }
-            file_count++;
+            count++;
         }
 
         // Write to the JPEG file if it has been opened
