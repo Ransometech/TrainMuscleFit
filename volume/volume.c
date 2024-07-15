@@ -45,12 +45,12 @@ int main(int argc, char *argv[])
     // Read single sample from input into buffer while there are samples left to read
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
-    // Update volume of sample
-    buffer *= factor;
+        // Update volume of sample
+        buffer *= factor;
 
-    // Write updated sample to new file
-    fwrite(&buffer, sizeof(int16_t), 1, output);
-}
+        // Write updated sample to new file
+        fwrite(&buffer, sizeof(int16_t), 1, output);
+    }
 
     // Close files
     fclose(input);
