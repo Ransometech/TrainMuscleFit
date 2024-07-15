@@ -104,10 +104,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            // Calculate the average color value
-            temp[i][j].rgbtRed = redSum / count;
-            temp[i][j].rgbtGreen = greenSum / count;
-            temp[i][j].rgbtBlue = blueSum / count;
+            // Calculate the average color value and round it
+            temp[i][j].rgbtRed = round((float)redSum / count);
+            temp[i][j].rgbtGreen = round((float)greenSum / count);
+            temp[i][j].rgbtBlue = round((float)blueSum / count);
         }
     }
 
