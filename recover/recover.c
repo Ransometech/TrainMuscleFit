@@ -22,9 +22,8 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
     {
-        // Check if the block indicates the start of a new JPEG
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-        {
+        // Create JPEGs from the dat
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)        {
             // Close the previous JPEG
             if (new_img != NULL)
             {
