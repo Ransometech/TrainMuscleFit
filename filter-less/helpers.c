@@ -45,9 +45,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             // Assign sepia colors to pixel
-            pixel->rgbtRed = sepiaRed;
-            pixel->rgbtGreen = sepiaGreen;
-            pixel->rgbtBlue = sepiaBlue;
+             pixel->rgbtRed = (sepiaRed > 255) ? 255 : sepiaRed;
+            pixel->rgbtGreen = (sepiaGreen > 255) ? 255 : sepiaGreen;
+            pixel->rgbtBlue = (sepiaBlue > 255) ? 255 : sepiaBlue;
         }
     }
     return;
