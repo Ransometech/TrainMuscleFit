@@ -72,7 +72,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Create a temporary image to store the blurred values
+    // Create temporary image to store the blurred value
     RGBTRIPLE temp[height][width];
 
     // Apply blur filter to the image
@@ -91,7 +91,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int newI = i + di;
                     int newJ = j + dj;
 
-                    // Check if the surrounding pixel is within the image bounds
+                    // Check if surrounding pixel is within the image bounds
                     if (newI >= 0 && newI < height && newJ >= 0 && newJ < width)
                     {
                         redSum += image[newI][newJ].rgbtRed;
