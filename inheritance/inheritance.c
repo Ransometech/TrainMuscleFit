@@ -84,7 +84,9 @@ void free_family(person *p)
 {
     // TODO: Handle base case
 
-    // TODO: Free parents recursively
+    // TODO: Free parents recursivel
+    free(p)
+    free_family(p)
 
     // TODO: Free child
 }
