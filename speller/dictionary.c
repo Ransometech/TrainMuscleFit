@@ -86,9 +86,9 @@ bool load(const char *dictionary)
         int len = strlen(word);
         for (int i = 0; i < len; i++)
         {
-            n->word[i] = toupper(word[i]);
+            word[i] = toupper(word[i]);
         }
-        n->word[len] = '\0';
+        strcpy(n->word, word);
 
         // Get hash index
         unsigned int index = hash(n->word);
