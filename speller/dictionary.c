@@ -31,6 +31,7 @@ bool check(const char *word)
     }
     allupper_word[strlen(word)] = '\0';
 
+    // Get hash index
     unsigned int index = hash(allupper_word);
     node *cursor = table[index];
 
