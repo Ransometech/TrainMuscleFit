@@ -51,11 +51,10 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    unsigned long hash = 5381;
-    int c;
-    while ((c = *word++))
+    unsigned int hash = 0;
+    while (*word)
     {
-        hash = ((hash << 5) + hash) + toupper(c);  // hash * 33 + c
+        hash = (hash << 2) ^ toupper(*word++);
     }
     return hash % N;
 }
