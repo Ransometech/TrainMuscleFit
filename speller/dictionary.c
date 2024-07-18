@@ -43,24 +43,27 @@ bool load(const char *dictionary)
         return false;
     }
     char word[LENGTH + 1];
-    while (fscanf(dict_file, "))
-    node *n = Malloc(sizeof(node));
-    if (n==NULL)
+    while (fscanf(dict_file, "%45", word) != EOF)
     {
+        node *n = Malloc(sizeof(node));
+        if (n==NULL)
+        {
 
-        printf("Cant assign memory to new node");
-        return false;
+            printf("Cant assign memory to new node");
+            return false;
+        }
+
+        strcpy(n->word, word);
+        unsigned int index = hash(word);
+
+        n->next = table[index];
+        table[index] = n
+
+
     }
-
-    strcpy(n->word, word);
-
-}
-
-
-
-
     return false;
 }
+
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
