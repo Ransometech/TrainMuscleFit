@@ -43,9 +43,15 @@ bool load(const char *dictionary)
         return false;
     }
     char word[LENGTH + 1];
+
+    node *new_node = Malloc(sizeof(node));
+    if (new_node==NULL)
     {
-        node *new_node
+
+        printf("Cant assign memory to new node")
+        return false;
     }
+}
 
 
 
