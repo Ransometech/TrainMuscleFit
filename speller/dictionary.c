@@ -107,6 +107,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    // Traverse hash table
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
