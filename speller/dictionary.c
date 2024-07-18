@@ -64,9 +64,11 @@ bool load(const char *dictionary)
         return false;
     }
     char word[LENGTH + 1];
+    // Read words from the file
     while (fscanf(dict_file, "%45", word) != EOF)
     {
-        node *n = Malloc(sizeof(node));
+        // new node
+        node *n = malloc(sizeof(node));
         if (n==NULL)
         {
 
@@ -74,13 +76,15 @@ bool load(const char *dictionary)
             return false;
         }
 
+
+        // Copy word into the node
         strcpy(n->word, word);
         unsigned int index = hash(word);
-
+        // Get hash index
         n->next = table[index];
         table[index] = n
 
-        printf("Inserted %s at index %u\n", word, index);
+       // printf("Inserted %s at index %u\n", word, index);
         count++
     }
     fclose(dict_file);
