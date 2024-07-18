@@ -52,53 +52,47 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    unsigned int hash = 0;
-    while (*word)
+    unsigned long hash = 5381;
+    int c;
+    while ((c = *word++))
     {
-        hash = (hash << 2) ^ toupper(*word++);
+        hash = ((hash << 5) + hash) + toupper(c); // hash * 33 + c
     }
     return hash % N;
 }
 
+
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
     FILE *dict_file = fopen(dictionary, "r");
-    if (dict_file == NULL){
-        printf("Can't open file");
-
+    if (dict_file == NULL)
+    {
+        printf("Can't open file\n");
         return false;
     }
     char word[LENGTH + 1];
-    // Read words from the file
+
     while (fscanf(dict_file, "%45s", word) != EOF)
     {
-        // new node
         node *n = malloc(sizeof(node));
-        if (n==NULL)
+        if (n == NULL)
         {
-
-            printf("Cant assign memory to new node");
+            printf("Can't assign memory to new node\n");
             return false;
         }
 
-        // Convert to uppercase
-        for(int i=0, word_len = strlen(word); i<word_len; i++)
+        int len = strlen(word);
+        for (int i = 0; i < len; i++)
         {
-            word[i] = toupper(word[i]);
+            n->word[i] = toupper(word[i]);
         }
+        n->word[len] = '\0';
 
-
-        // Copy word into the node
-        strcpy(n->word, word);
-        unsigned int index = hash(word);
-        // Get hash index
+        unsigned int index = hash(n->word);
         n->next = table[index];
         table[index] = n;
 
-       // printf("Inserted %s at index %u\n", word, index);
         count++;
     }
     fclose(dict_file);
