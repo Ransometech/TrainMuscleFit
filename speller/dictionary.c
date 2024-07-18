@@ -59,9 +59,10 @@ bool load(const char *dictionary)
         n->next = table[index];
         table[index] = n
 
-
+        printf("Inserted %s at index %u\n", word, index);
     }
-    return false;
+    fclose(dict_file);
+    return true;
 }
 
 
