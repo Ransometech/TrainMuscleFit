@@ -82,10 +82,10 @@ bool load(const char *dictionary)
         unsigned int index = hash(word);
         // Get hash index
         n->next = table[index];
-        table[index] = n
+        table[index] = n;
 
        // printf("Inserted %s at index %u\n", word, index);
-        count++
+        count++;
     }
     fclose(dict_file);
     return true;
