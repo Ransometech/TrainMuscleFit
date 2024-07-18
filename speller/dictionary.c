@@ -5,7 +5,7 @@
 
 #include "dictionary.h"
 
-int count = 0;
+int count = 0; // Counter for the number of words in the dictionary
 
 // Represents a node in a hash table
 typedef struct node
@@ -106,7 +106,7 @@ bool unload(void)
         {
             node *temp = cursor;
             cursor = cursor->next;
-            printf("Freeing %s\n", temp->word);  
+            printf("Freeing %s\n", temp->word);
             free(temp);
         }
     }
