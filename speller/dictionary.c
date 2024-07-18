@@ -51,6 +51,8 @@ bool load(const char *dictionary)
         printf("Cant assign memory to new node")
         return false;
     }
+
+    strcpy
 }
 
 
