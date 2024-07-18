@@ -84,6 +84,12 @@ bool load(const char *dictionary)
             return false;
         }
 
+        // Convert to uppercase
+        for(int i=0, word_len = strlen(word); i<word_len; i++)
+        {
+            word[i] = toupper(word[i]);
+        }
+
 
         // Copy word into the node
         strcpy(n->word, word);
