@@ -48,7 +48,7 @@ bool load(const char *dictionary)
     if (n==NULL)
     {
 
-        printf("Cant assign memory to new node")
+        printf("Cant assign memory to new node");
         return false;
     }
 
