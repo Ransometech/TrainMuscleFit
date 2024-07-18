@@ -82,7 +82,7 @@ bool load(const char *dictionary)
             return false;
         }
 
-        // Convert to uppercase before storing
+        // Convert to uppercase
         int len = strlen(word);
         for (int i = 0; i < len; i++)
         {
