@@ -62,59 +62,47 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    // TODO
     FILE *dict_file = fopen(dictionary, "r");
-    if (dict_file == NULL)
-    {
-        printf("Can't open file\n");
+    if (dict_file == NULL){
+        printf("Can't open file");
+
         return false;
     }
     char word[LENGTH + 1];
-
+    // Read words from the file
     while (fscanf(dict_file, "%45s", word) != EOF)
     {
+        // new node
         node *n = malloc(sizeof(node));
-        if (n == NULL)
+        if (n==NULL)
         {
-            printf("Can't assign memory to new node\n");
+
+            printf("Cant assign memory to new node");
             return false;
         }
 
-        int len = strlen(word);
-        for (int i = 0; i < len; i++)
+        // Convert to uppercase
+        for(int i=0, word_len = strlen(word); i<word_len; i++)
         {
-            n->word[i] = toupper(word[i]);
+            word[i] = toupper(word[i]);
         }
-        n->word[len] = '\0';
 
-        unsigned int index = hash(n->word);
+
+        // Copy word into the node
+        strcpy(n->word, word);
+        unsigned int index = hash(word);
+        // Get hash index
         n->next = table[index];
         table[index] = n;
 
+       // printf("Inserted %s at index %u\n", word, index);
         count++;
     }
     fclose(dict_file);
     return true;
 }
 
-unsigned int size(void)
-{
-    return count;
-}
-
-bool unload(void)
-{
-    for (int i = 0; i < N; i++)
-    {
-        node *cursor = table[i];
-        while (cursor != NULL)
-        {
-            node *temp = cursor;
-            cursor = cursor->next;
-            free(temp);
-        }
-    }
-    return true;
-}
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
