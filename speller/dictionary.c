@@ -26,21 +26,20 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
-    char allupper_word[LENGTH + 1];
-    for (int i = 0; word[i] && i < LENGTH; i++)
+    char upper_word[LENGTH + 1];
+    int len = strlen(word);
+    for (int i = 0; i < len; i++)
     {
-        allupper_word[i] = toupper(word[i]);
+        upper_word[i] = toupper(word[i]);
     }
-    allupper_word[strlen(word)] = '\0';
+    upper_word[len] = '\0';
 
-    // Get index
-    unsigned int index = hash(allupper_word);
+    unsigned int index = hash(upper_word);
     node *cursor = table[index];
 
     while (cursor != NULL)
     {
-        if (strcmp(cursor->word, allupper_word) == 0)
+        if (strcmp(cursor->word, upper_word) == 0)
         {
             return true;
         }
@@ -48,6 +47,7 @@ bool check(const char *word)
     }
     return false;
 }
+
 
 // Hashes word to a number
 unsigned int hash(const char *word)
