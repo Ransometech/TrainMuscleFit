@@ -24,6 +24,24 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    char allupper_word[LENGTH + 1];
+    for (int i = 0; word[i] && i < LENGTH; i++)
+    {
+        allupper_word[i] = toupper(word[i]);
+    }
+    allupper_word[strlen(word)] = '\0';
+
+    unsigned int index = hash(allupper_word);
+    node *cursor = table[index];
+
+    while (cursor != NULL)
+    {
+        if (strcmp(cursor->word, allupper_word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
+    }
     return false;
 }
 
