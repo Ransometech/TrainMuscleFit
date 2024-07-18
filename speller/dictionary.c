@@ -99,5 +99,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        while (cursor != NULL)
+        {
+            node *temp = cursor;
+            cursor = cursor->next;
+            printf("Freeing %s\n", temp->word);  // Print statement for visualization
+            free(temp);
+        }
+    }
+    return true;
 }
