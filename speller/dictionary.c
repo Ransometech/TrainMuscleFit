@@ -23,17 +23,6 @@ const unsigned int N = 10000;  // number of buckets
 // Hash table
 node *table[N];
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    unsigned long hash = 5381;
-    int c;
-    while ((c = *word++))
-    {
-        hash = ((hash << 5) + hash) + toupper(c);  // hash * 33 + c
-    }
-    return hash % N;
-}
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -57,6 +46,18 @@ bool check(const char *word)
         cursor = cursor->next;
     }
     return false;
+}
+
+// Hashes word to a number
+unsigned int hash(const char *word)
+{
+    unsigned long hash = 5381;
+    int c;
+    while ((c = *word++))
+    {
+        hash = ((hash << 5) + hash) + toupper(c);  // hash * 33 + c
+    }
+    return hash % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
