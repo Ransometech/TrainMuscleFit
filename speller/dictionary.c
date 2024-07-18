@@ -68,7 +68,7 @@ bool load(const char *dictionary)
     }
     char word[LENGTH + 1];
     // Read words from the file
-    while (fscanf(dict_file, "%45", word) != EOF)
+    while (fscanf(dict_file, "%45s", word) != EOF)
     {
         // new node
         node *n = malloc(sizeof(node));
