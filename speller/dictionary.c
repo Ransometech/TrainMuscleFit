@@ -52,7 +52,8 @@ bool load(const char *dictionary)
         return false;
     }
 
-    strcpy
+    strcpy(new_node->word, word);
+    
 }
 
 
