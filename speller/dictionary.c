@@ -106,7 +106,7 @@ bool unload(void)
         {
             node *temp = cursor;
             cursor = cursor->next;
-            printf("Freeing %s\n", temp->word);  // Print statement for visualization
+            printf("Freeing %s\n", temp->word);  
             free(temp);
         }
     }
