@@ -36,7 +36,17 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *inptr = fopen(infile, "r");
+    FILE *dict_file = fopen(dictionary, "r");
+    if (dict_file == NULL){
+        printf("Can't open file");
+
+        return false;
+    }
+    char word[LENGTH + 1];
+    {
+        node *new_node
+    }
+
 
 
 
