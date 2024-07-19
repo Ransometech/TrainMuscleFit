@@ -13,4 +13,6 @@ def count_letters(text):
 
 
 def count_words(text):
-    for 
+    count +=0
+    for i in text:
+        if i == " "
