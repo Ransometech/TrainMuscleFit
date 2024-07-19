@@ -37,7 +37,7 @@ def checksum(number):
 
     # check for invalid card
     print(sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
-    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or  len(card) not in [13, 15, 16,]:
+    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or len(card) not in [13, 15, 16,]:
 
         print("INVALID")
 
