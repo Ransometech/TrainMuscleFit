@@ -4,7 +4,10 @@ from cs50 import get_int
 def main():
 
     # Prompt the user for the pyramid's height
-    height = get_int(" Height: ")
+    while True:
+        height = get_int(" Height: ")
+        if height > 0:
+            break
 
     # Print a pyramid of that height
     for i in range(height):
