@@ -3,6 +3,8 @@ from cs50 import get_int
 
 
 def main():
+
+    // Prompt the user for the pyramid's height
     height = get_int(" Height: ")
 
     for i in range(height):
@@ -10,9 +12,12 @@ def main():
 
 
 def print_row(height, height_row):
-        height = height
+        height_row = height_row +1
         space_len =   height - height_row
         space = "*" * space_len
-        print (space + "#" * height_row + " " + "#" * height_row)
+
+        # Print a row of bricks for the left and right pyramid
+
+        print (space + "#" * height_row + "  " + "#" * height_row)
 
 main()
