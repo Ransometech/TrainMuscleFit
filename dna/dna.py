@@ -5,7 +5,10 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if 
+    if len(sys.argv != 3):
+        print("Invalid command-line usage")
+        return 1
+    
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable
