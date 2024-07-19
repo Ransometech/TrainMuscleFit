@@ -31,6 +31,8 @@ def checksum(number):
         number = int(number / 10)
         print(multiplied_digit, "multiplied_digit")
         print(other_digit, "other_digit")
+        if number == 0:
+            break
 
 
 
