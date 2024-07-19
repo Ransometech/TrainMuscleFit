@@ -33,6 +33,8 @@ def checksum(number):
         print(other_digit, "other_digit")
         if number == 0:
             break
+    for i in multiplied_digit:
+        print(i % 10 + int(i/10))
 
 
 
