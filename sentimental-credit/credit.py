@@ -37,7 +37,7 @@ def checksum(number):
 
     # check for invalid card
     print (sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
-    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or re.match(r'^\d{1$' is False :
+    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or re.match(r'^\d{1}$' is False :
 
         print("INVALID")
 
