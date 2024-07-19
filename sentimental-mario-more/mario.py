@@ -6,7 +6,7 @@ def main():
     # Prompt the user for the pyramid's height
     while True:
         height = get_int(" Height: ")
-        if height > 0:
+        if height > 0 and height <= 8:
             break
 
     # Print a pyramid of that height
