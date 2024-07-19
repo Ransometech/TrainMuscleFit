@@ -53,9 +53,9 @@ def checksum(number):
 
         print("INVALID")
 
-    elif re.match(r'^5[1-5]\d+$', user_input):
+    elif re.match(r'^5[1-5]\d+$', card):
         print("MasterCard")
-    elif re.match(r'^4\d+$', user_input):
+    elif re.match(r'^4\d+$', card):
         print("Visa")
     else:
         print("American Express")
