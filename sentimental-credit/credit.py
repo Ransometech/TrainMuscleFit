@@ -52,8 +52,17 @@ def checksum(number):
     if (sum_other_digit+sum_multiplied_digit)%10 != 0:
 
         print("INVALID")
-    elif re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input):
-        if number
+
+    elif re.match(r'^5[1-5]\d+$', user_input):
+        print("MasterCard")
+    elif re.match(r'^4\d+$', user_input):
+        print("Visa")
+    else:
+        print("American Express")
+
+
+
+
 
 
 
