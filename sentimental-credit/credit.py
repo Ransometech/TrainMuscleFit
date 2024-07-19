@@ -37,7 +37,7 @@ def checksum(number):
 
     # check for invalid card
     print (sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
-    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or not re.match(r'^\d{15,16}$' or not re.match(r'^\d{13}$':
+    if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or not re.match(r'^\d{15,16}$', card) or not re.match(r'^\d{13}$', card):
 
         print("INVALID")
 
