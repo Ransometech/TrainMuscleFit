@@ -36,7 +36,7 @@ def checksum(number):
         sum_other_digit += i
 
     # check for invalid card
-    print (sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
+    print(sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
     if (sum_other_digit+sum_multiplied_digit) % 10 != 0 or  len(card) not in [13, 15, 16,]:
 
         print("INVALID")
@@ -44,10 +44,15 @@ def checksum(number):
     # print each card type
     elif re.match(r'^5[1-5]\d+$', card):
         print("MASTERCARD")
+
     elif re.match(r'^4\d+$', card):
         print("VISA")
-    else:
+
+    elif re.match(r'^34\d+$', card) or re.match(r'^37\d+$', card):
         print("AMEX")
+
+    else:
+        print("INVALID")
 
 
 main()
