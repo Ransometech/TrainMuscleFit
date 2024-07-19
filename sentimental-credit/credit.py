@@ -52,7 +52,7 @@ def checksum(number):
     if (sum_other_digit+sum_multiplied_digit)%10 != 0:
 
         print("INVALID")
-    elif :
+    elif re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input) or re.match(r'^51\d+$', user_input):
         if number
 
 
