@@ -52,7 +52,7 @@ def checksum(number):
 
         print("INVALID")
     else:
-        if number
+        if number 
 
 
 
