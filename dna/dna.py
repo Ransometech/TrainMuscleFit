@@ -8,7 +8,7 @@ def main():
     if len(sys.argv != 3):
         print("Invalid command-line usage")
         return 1
-    
+
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable
@@ -18,7 +18,6 @@ def main():
     # TODO: Check database for matching profiles
 
     return
-
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
