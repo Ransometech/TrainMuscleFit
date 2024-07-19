@@ -9,7 +9,7 @@ def main():
 
 
 def print_row(height):
-    for i in range(height);
-        print ("#" * i)
+        height = height+1
+        print ("#" * height, end="")
 
 main()
