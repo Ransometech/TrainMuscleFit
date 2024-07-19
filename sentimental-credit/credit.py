@@ -21,6 +21,8 @@ def check_input(number):
 def checksum(number):
     multiplied_digit = []
     other_digit = []
+    sum_multiplied_digit =  0
+    sum_other_digit = 0
 
     for i in str(number):
         #print("num", i,  number % 2,"_",  int(number /10),"_", number % 10)
@@ -33,8 +35,14 @@ def checksum(number):
         print(other_digit, "other_digit")
         if number == 0:
             break
+
     for i in multiplied_digit:
-        print(i % 10 + int(i/10))
+        sum_multiplied_digit += i % 10 + int(i/10)
+    print(sum_multiplied_digit)
+
+    for i in other_digit:
+        other_digit += i
+    print(other_digit)
 
 
 
