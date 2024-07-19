@@ -10,9 +10,9 @@ def main():
 
 
 def print_row(height, height_row):
-        height = height+1
+        height = height
         space_len =   height - height_row
-        space = " " * space_len
+        space = "*" * space_len
         print (space + "#" * height_row + " " + "#" * height_row)
 
 main()
