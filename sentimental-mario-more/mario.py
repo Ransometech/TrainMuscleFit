@@ -11,7 +11,8 @@ def main():
 
 def print_row(height, height_row):
         height = height+1
-        space =   height - height_row
-        print (space * "#" * height_row + " " + "#" * height_row)
+        space_len =   height - height_row
+        space = " " * space_len
+        print (space + "#" * height_row + " " + "#" * height_row)
 
 main()
