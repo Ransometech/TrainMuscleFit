@@ -48,7 +48,7 @@ def checksum(number):
 
         print("INVALID")
     else:
-        
+        if 
 
 
 
