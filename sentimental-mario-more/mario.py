@@ -10,6 +10,6 @@ def main():
 
 def print_row(height):
         height = height+1
-        print ("#" * height, end="")
+        print ("#" * height)
 
 main()
