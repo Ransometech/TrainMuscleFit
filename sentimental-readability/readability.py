@@ -13,7 +13,7 @@ def main():
 
     if index < 1:
         print("Before Grade 1")
-    elif >16:
+    elif index>16:
         print("Grade 16+")
     else:
         print("Grade", index)
@@ -26,16 +26,20 @@ def count_letters(text):
     return count
 
 def count_words(text):
-    count +=0
+    count =0
     for i in text:
         if i == " ":
             count += 1
 
-    return count +
+    return count + 1
 
 def count_sentences(text):
+
+    count =0
     for i in text:
-        if i in [".", "?", "!"]
-        count += 1
+        if i in [".", "?", "!"]:
+            count += 1
 
     return count
+
+main()
