@@ -36,6 +36,7 @@ def checksum(number):
         sum_other_digit += i
 
     # check for invalid card
+    print (sum_other_digit+sum_multiplied_digit, "sum_other_digit+sum_multiplied_digit")
     if (sum_other_digit+sum_multiplied_digit) % 10 != 0:
 
         print("INVALID")
