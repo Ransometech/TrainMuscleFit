@@ -41,7 +41,7 @@ def checksum(number):
     print(sum_multiplied_digit)
 
     for i in other_digit:
-        other_digit += i
+        sum_other_digit += i
     print(other_digit)
 
 
