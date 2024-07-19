@@ -42,7 +42,14 @@ def checksum(number):
 
     for i in other_digit:
         sum_other_digit += i
-    print(other_digit)
+    print(sum_other_digit)
+    print(20%10, "last")
+    if (sum_other_digit+sum_multiplied_digit)%10 != 0:
+
+        print("INVALID")
+    else:
+        
+
 
 
 
