@@ -12,7 +12,7 @@ def main():
 
 def check_input(number):
     for i in patterns:
-        if re.match(i, number):
+        if re.match(i, str(number)):
             return True
     return False
 
