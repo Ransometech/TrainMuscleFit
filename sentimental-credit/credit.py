@@ -19,10 +19,12 @@ def check_input(number):
 
 
 def checksum(number):
-    
+    multiplied_digit = []
+    other_digit = []
+
     for i in str(number):
         print("num", i,  number % 2,"_",  int(number /10),"_", number % 10)
-
+        
         number = int(number / 10)
 
 main()
