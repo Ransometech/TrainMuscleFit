@@ -11,6 +11,7 @@ def main():
     S = letters / words
     index = round(0.0588 * L - 0.296 * S -15.8)
 
+    print(L, S, index)
     if index < 1:
         print("Before Grade 1")
     elif index>16:
