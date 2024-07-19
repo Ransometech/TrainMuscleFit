@@ -10,6 +10,9 @@ def main():
         return 1
 
     # TODO: Read database file into a variable
+    with open("foo.csv") as file:
+    reader = csv.DictReader(file)
+    print(reader.fieldnames)
 
     # TODO: Read DNA sequence file into a variable
 
