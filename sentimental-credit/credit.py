@@ -19,7 +19,7 @@ def check_input(number):
 
 
 def checksum(number):
-    for i in range(number):
+    for i in str(number):
         print("num", i,  number % 2, number /10, number % 10)
 
 main()
