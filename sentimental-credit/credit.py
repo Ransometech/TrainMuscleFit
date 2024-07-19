@@ -8,6 +8,7 @@ def main():
         number = get_int("Number: ")
         if check_input(number):
             break
+    checksum(number)
 
 
 def check_input(number):
@@ -17,7 +18,8 @@ def check_input(number):
     return False
 
 
-main()
 def checksum(number):
-    
+    for i in range(number):
+        print("num", i,  number % 2, number /10, number % 10)
 
+main()
