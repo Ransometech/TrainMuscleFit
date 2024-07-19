@@ -1,15 +1,17 @@
 from cs50 import get_int
 
+height = get_int(" Height: ")
+
 
 def main():
-    height = get_int(" Height: ")
 
     for i in range(height):
         print_row(i)
 
 
-def print_row(height):
+def print_row(height_row):
         height = height+1
-        print ("#" * height)
+        space =   height - height_row
+        print ("#" * height_row + " " + "#" * height_row)
 
 main()
