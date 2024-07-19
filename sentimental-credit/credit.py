@@ -23,9 +23,15 @@ def checksum(number):
     other_digit = []
 
     for i in str(number):
-        print("num", i,  number % 2,"_",  int(number /10),"_", number % 10)
+        #print("num", i,  number % 2,"_",  int(number /10),"_", number % 10)
 
         other_digit.append(number % 10)
         number = int(number / 10)
+        multiplied_digit.append(2 *(number % 10))
+        number = int(number / 10)
+        print(multiplied_digit, "multiplied_digit")
+        print(other_digit, "other_digit")
+
+
 
 main()
