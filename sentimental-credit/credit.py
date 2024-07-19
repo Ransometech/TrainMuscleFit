@@ -23,6 +23,10 @@ def checksum(number):
     other_digit = []
     sum_multiplied_digit =  0
     sum_other_digit = 0
+    American_Express = [34, 47]
+    MasterCard = [51, 52, 53, 54, 55]
+    Visa = [4]
+
 
     for i in str(number):
         #print("num", i,  number % 2,"_",  int(number /10),"_", number % 10)
@@ -48,7 +52,7 @@ def checksum(number):
 
         print("INVALID")
     else:
-        if 
+        if number
 
 
 
