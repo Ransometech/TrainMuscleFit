@@ -18,3 +18,6 @@ def check_input(number):
 
 
 main()
+def checksum(number):
+    
+
