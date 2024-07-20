@@ -20,10 +20,12 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as text_file:
         text_reader = text_file.read()
-        print(type(text_reader))
 
     # TODO: Find longest match of each STR in DNA sequence
+    print (longest_match(text_reader, "AGAT"))
+    print (longest_match(text_reader, "AATG"))
     print (longest_match(text_reader, "TATC"))
+
 
     # TODO: Check database for matching profiles
 
@@ -61,7 +63,6 @@ def longest_match(sequence, subsequence):
                 break
 
         # Update most consecutive matches found
-            print(count, "count")
         longest_run = max(longest_run, count)
 
     # After checking for runs at each character in seqeuence, return longest run found
