@@ -23,8 +23,9 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     #print(rows)
-    longest_matches = {}
+
     for i in rows:
+        longest_matches = {i.}
         #print(i)
         count = 1
         for str in list(i.keys())[1:]:
