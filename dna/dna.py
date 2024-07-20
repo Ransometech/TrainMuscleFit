@@ -34,8 +34,9 @@ def main():
             longest_matches.update(sub_match)
 
         if longest_matches == i:
-            print(i.)
+            print(i["name"])
             break
+        
     print("No match")
 
     #print (longest_match(text_reader, "AGAT"))
