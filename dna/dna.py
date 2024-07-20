@@ -28,8 +28,14 @@ def main():
         longest_matches = {"name": list(i.values())[0]}
         #print(i)
         count = 1
+
+        #Extract each str in csv file
         for str_dna in list(i.keys())[1:]:
+
+            # Get the longest run of ech str
             longest_run = longest_match(text_reader, str_dna)
+
+            # Save the str and its longest run in a temp dictionary
             sub_match = {str_dna: str(longest_run)}
             longest_matches.update(sub_match)
 
