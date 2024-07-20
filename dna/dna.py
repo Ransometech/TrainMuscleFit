@@ -61,6 +61,7 @@ def longest_match(sequence, subsequence):
                 break
 
         # Update most consecutive matches found
+            print(count, "count")
         longest_run = max(longest_run, count)
 
     # After checking for runs at each character in seqeuence, return longest run found
