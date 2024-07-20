@@ -33,8 +33,9 @@ def main():
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
 
-
+        print(longest_matches)
         break
+
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
     #print (longest_match(text_reader, "TATC"))
