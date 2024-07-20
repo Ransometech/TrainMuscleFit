@@ -23,7 +23,8 @@ def main():
         print(rows)
 
     # TODO: Find longest match of each STR in DNA sequence
-    print (longest_match(text_reader, "AGAT"))
+    print (longest_match("AAGGTAAGTTTAGAATATAAAAGGTGAGTTAAATAGAATAGGTTAAAATTAAAGGAGATCAGATCAGATCAGATCTATCTATCTATCTATCTATCAGAAAAGAGTAAATAGTTAAAGAGTAAGATATTGAATTAATGGAAAATATTGTTGGGGAAAGGAGGGATAGAAGG
+", "AGAT"))
 
     # TODO: Check database for matching profiles
 
