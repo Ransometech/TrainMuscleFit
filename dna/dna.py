@@ -32,8 +32,12 @@ def main():
             longest_run = longest_match(text_reader, str)
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
-        #print(i)
+
+        print(i, "i")
         print(longest_matches)
+        if longest_matches == i:
+            print("Match found")
+            break
 
 
     #print (longest_match(text_reader, "AGAT"))
