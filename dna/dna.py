@@ -32,7 +32,7 @@ def main():
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
 
-        print(rows, i)
+        print(i)
         #print(longest_matches)
 
 
