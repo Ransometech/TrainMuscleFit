@@ -25,17 +25,15 @@ def main():
     #print(rows)
 
     for i in rows:
-        longest_matches = {}
-        print(i.keys()[1])
+        longest_matches = {"name": list(i.values())[0]}
         #print(i)
         count = 1
         for str in list(i.keys())[1:]:
             longest_run = longest_match(text_reader, str)
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
-        i
         #print(i)
-        #print(longest_matches)
+        print(longest_matches)
 
 
     #print (longest_match(text_reader, "AGAT"))
