@@ -25,7 +25,8 @@ def main():
     print(rows)
     for i in rows:
         for str in i:
-            print(i[str])
+            #print(i[str])
+            pass
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
     #print (longest_match(text_reader, "TATC"))
