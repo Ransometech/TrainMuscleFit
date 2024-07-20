@@ -36,8 +36,8 @@ def main():
         if longest_matches == i:
             print(i["name"])
             break
-        
-    print("No match")
+    else:
+        print("No match")
 
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
