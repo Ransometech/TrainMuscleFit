@@ -25,7 +25,8 @@ def main():
     #print(rows)
 
     for i in rows:
-        longest_matches = {i.}
+        longest_matches = {}
+        print(i.keys())
         #print(i)
         count = 1
         for str in list(i.keys())[1:]:
@@ -33,7 +34,7 @@ def main():
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
         i
-        print(i)
+        #print(i)
         #print(longest_matches)
 
 
