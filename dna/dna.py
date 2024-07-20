@@ -25,6 +25,7 @@ def main():
     #print(rows)
     for i in rows:
         print(i)
+        count = 1
         for str in i:
             #print(i[str])
             pass
