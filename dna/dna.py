@@ -30,8 +30,9 @@ def main():
         count = 1
         for str in list(i.keys())[1:]:
             longest_run = longest_match(text_reader, str)
-            sub_match = {str: str(longest_run)}
+            sub_match = {str: longest_run}
             longest_matches.update(sub_match)
+            print(longest_run, type(longest_run))
 
         print(i, "i")
         print(longest_matches)
