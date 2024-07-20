@@ -16,10 +16,14 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             rows.append(row)
-            
+
     # TODO: Read DNA sequence file into a variable
+    with open(sys.argv[2]) as text_file:
+        text_reader = text_file.read()
+        print(text_reader)
 
     # TODO: Find longest match of each STR in DNA sequence
+    print (longest_match(text_reader, "AGAT"))
 
     # TODO: Check database for matching profiles
 
