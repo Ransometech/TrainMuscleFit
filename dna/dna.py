@@ -4,7 +4,6 @@ import sys
 
 def main():
 
-
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Invalid command-line usage")
@@ -22,14 +21,13 @@ def main():
         text_reader = text_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    #print(rows)
 
     for i in rows:
-        longest_matches = {"name": list(i.values())[0]}
-        #print(i)
-        count = 1
 
-        #Extract each str in csv file
+        # Create a dictionary to save the name, str and longest matches
+        longest_matches = {"name": list(i.values())[0]}
+
+        # Extract each str in csv file
         for str_dna in list(i.keys())[1:]:
 
             # Get the longest run of ech str
@@ -37,22 +35,23 @@ def main():
 
             # Save the str and its longest run in a temp dictionary
             sub_match = {str_dna: str(longest_run)}
+
+            # Update the dict with the temp dict with the str and longest run
             longest_matches.update(sub_match)
 
+        # Check if there is match and break, else continue looping through our file
         if longest_matches == i:
             print(i["name"])
+
             break
+    # If no match
     else:
         print("No match")
-
-    #print (longest_match(text_reader, "AGAT"))
-    #print (longest_match(text_reader, "AATG"))
-    #print (longest_match(text_reader, "TATC"))
-
 
     # TODO: Check database for matching profiles
 
     return
+
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
@@ -90,5 +89,6 @@ def longest_match(sequence, subsequence):
 
     # After checking for runs at each character in seqeuence, return longest run found
     return longest_run
+
 
 main()
