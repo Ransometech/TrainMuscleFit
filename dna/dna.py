@@ -26,9 +26,9 @@ def main():
     for i in rows:
         #print(i)
         count = 1
-        for str in i[1:]:
+        for str in list(i.keys())[1:]:
             print(str)
-            pass
+        break
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
     #print (longest_match(text_reader, "TATC"))
