@@ -28,18 +28,15 @@ def main():
         longest_matches = {"name": list(i.values())[0]}
         #print(i)
         count = 1
-        for str in list(i.keys())[1:]:
-            longest_run = longest_match(text_reader, str)
-            sub_match = {str: str(longest_run)}
+        for str_dna in list(i.keys())[1:]:
+            longest_run = longest_match(text_reader, str_dna)
+            sub_match = {str_dna: str(longest_run)}
             longest_matches.update(sub_match)
-            print(longest_run, type(longest_run))
 
-        print(i, "i")
-        print(longest_matches)
         if longest_matches == i:
             print("Match found")
             break
-
+    print()
 
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
