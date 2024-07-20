@@ -24,6 +24,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     print(rows)
     for i in rows:
+        print(i)
         for str in i:
             #print(i[str])
             pass
