@@ -27,7 +27,7 @@ def main():
         print(i)
         count = 1
         for str in i:
-            #print(i[str])
+            print(i[str])
             pass
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
