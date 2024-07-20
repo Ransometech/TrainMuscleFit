@@ -31,7 +31,7 @@ def main():
             longest_run = longest_match(text_reader, str)
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
-        
+        i
         print(i)
         #print(longest_matches)
 
