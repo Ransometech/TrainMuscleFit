@@ -26,7 +26,7 @@ def main():
 
     for i in rows:
         longest_matches = {}
-        print(i.keys())
+        print(i.keys()[1])
         #print(i)
         count = 1
         for str in list(i.keys())[1:]:
