@@ -29,6 +29,9 @@ def main():
         count = 1
         for str in list(i.keys())[1:]:
             print(str)
+            longest_run = longest_match(text_reader, str)
+            sub_matchs = {str: }
+
         break
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
