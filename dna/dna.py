@@ -28,13 +28,13 @@ def main():
         #print(i)
         count = 1
         for str in list(i.keys())[1:]:
-            print(str)
             longest_run = longest_match(text_reader, str)
             sub_match = {str: longest_run}
             longest_matches.update(sub_match)
 
-        print(longest_matches)
-        break
+        print(rows, i)
+        #print(longest_matches)
+
 
     #print (longest_match(text_reader, "AGAT"))
     #print (longest_match(text_reader, "AATG"))
