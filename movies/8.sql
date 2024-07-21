@@ -1,7 +1,7 @@
 
 SELECT name FROM people
-WHERE people.id =
+WHERE people.id IN
 (
-    SELECT id FROM movies
+    SELECT movies.id FROM movies
     WHERE title = 'Toy Story'
 );
