@@ -6,4 +6,4 @@ WHERE people.id IN
     JOIN ratings ON directors.movie_id = ratings.movie_id
     WHERE rating >= 9.0
 )
-GROUP BY name;
+;
