@@ -5,4 +5,5 @@ WHERE people.id IN
     SELECT person_id FROM movies
     JOIN stars ON movies.id = movie_id
     WHERE year = 2004
-);
+)
+ORDER BY birth;
