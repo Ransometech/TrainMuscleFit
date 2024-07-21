@@ -1,8 +1,9 @@
 -- SQL query to list the names of all people who starred in Toy Story
-SELECT name FROM people
+SELECT COUNT(name) FROM people
 WHERE people.id IN
 (
     SELECT person_id FROM directors
-    JOIN ratings ON directors.movies_id = ratings.movie_id
+    JOIN ratings ON directors.movie_id = ratings.movie_id
     WHERE rating >= 9.0
-);
+)
+GROUP BY name;
