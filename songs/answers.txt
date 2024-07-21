@@ -5,14 +5,14 @@ Danceability: 0.72 (high)
 This means the listener's favorite songs are generally energetic and danceable but have a balanced, slightly cheerful mood.
 
 
-Why This Might Not Be Very Representative:
+Why This Might Not Be Accurate:
 
-Averages Miss Details: Averages don't show the variety of moods in the songs. For example, there could be both very happy and very sad songs.
-Changes Over Time: The listener's mood and music preferences might change throughout the year, which isn't shown by a single average.
-Equal Weight: All songs are given equal importance, even though some might be more meaningful to the listener.
+Averages Miss Variety: There could be both happy and sad songs.
+Changes Over Time: Music tastes can change during the year.
+Equal Weight: Every song is treated the same, but some songs might matter more.
 Better Ways to Calculate the Aura:
 
-Look at the Median: Use the middle value to better understand typical moods.
-Group Similar Songs: Cluster songs into mood categories.
-Weight by Play Count: Give more importance to songs played more often.
-Track Changes Over Time: See how preferences change throughout the year.
+Use the Median: The middle value might be more accurate.
+Group Similar Songs: Put songs into mood categories.
+Weight by Play Count: Give more importance to frequently played songs.
+Track Changes Over Time: See how tastes change throughout the year.
