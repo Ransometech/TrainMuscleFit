@@ -1,1 +1,2 @@
-SELECT title FROM movies WHERE 
+SELECT COUNT(*) FROM movies
+WHERE
