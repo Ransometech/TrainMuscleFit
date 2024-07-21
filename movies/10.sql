@@ -4,5 +4,5 @@ WHERE people.id IN
 (
     SELECT person_id FROM directors
     JOIN ratings ON directors.movies_id = ratings.movie_id
-    WHERE ratings >= 9.0
+    WHERE rating >= 9.0
 );
