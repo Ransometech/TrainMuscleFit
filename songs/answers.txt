@@ -1,0 +1,5 @@
+Based on the top 100 songs from 2018, the average values are:
+Energy: 0.66 (high)
+Valence: 0.48 (moderate)
+Danceability: 0.72 (high)
+This means the listener's favorite songs are generally energetic and danceable but have a balanced, slightly cheerful mood.
