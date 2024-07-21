@@ -6,4 +6,5 @@ WHERE people.id IN
     JOIN stars ON movies.id = movie_id
     WHERE year = 2004
 )
+GROUP BY people.name
 ORDER BY birth;
