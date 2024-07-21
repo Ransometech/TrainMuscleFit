@@ -1,2 +1,3 @@
 SELECT COUNT(*) FROM movies
+JOIN ON 
 WHERE
