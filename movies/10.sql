@@ -2,7 +2,7 @@
 SELECT name FROM people
 WHERE people.id IN
 (
-    SELECT person_id FROM movies
-    JOIN stars ON movies.id =movie_id
-    WHERE title = 'Toy Story'
+    SELECT person_id FROM directors
+    JOIN ratings ON directors.movies_id = ratings.movie_id
+    WHERE ratings >= 9.0
 );
