@@ -14,7 +14,7 @@ SELECT * FROM interviews
 WHERE year = 2023
 AND month = 7
 AND day = 28
-AND transcript LIKE '%Jack%';
+;
 
 -- Find suspections ATM
 SELECT * FROM atm_transactions
