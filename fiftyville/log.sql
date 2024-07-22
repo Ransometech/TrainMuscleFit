@@ -140,8 +140,6 @@ WHERE phone_number IN
 
 
 
-SELECT * FROM airports
-LIMIT 5;
 
 SELECT * FROM flights
 JOIN passengers
@@ -190,3 +188,4 @@ WHERE passport_number IN
 AND year = 2023
 AND month = 7
 AND day = 29;
+
