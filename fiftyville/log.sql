@@ -95,4 +95,47 @@ AND year = 2023
 AND month = 7
 AND day = 28;
 
-SELECT DISTINCT phone_ FROM
+/*Retrieve the license plate number from the brakery_security_logs table based on the information provided by the witness during the interview.
+Obtain the account number and bank account details through ATM transactions using the witness's information.
+Link the account to individuals and select the suspect's account.
+Query the call logs from the previously gathered information and identify calls with a duration of less than 60 seconds.
+Select individuals associated with those calls.*/
+SELECT * FROM people
+WHERE phone_number IN
+(
+        SELECT caller FROM phone_calls
+        WHERE caller IN
+    (
+        SELECT phone_number FROM bank_accounts
+        JOIN people
+        ON id = person_id
+        WHERE account_number IN
+        (
+            SELECT account_number FROM atm_transactions
+            WHERE atm_location = 'Leggett Street'
+            AND year = 2023
+            AND month = 7
+            AND day = 28
+        )
+        AND license_plate IN
+        (
+            SELECT license_plate
+            FROM bakery_security_logs
+            WHERE year = 2023
+            AND month = 7
+            AND day = 28
+            AND hour = 10
+            AND minute >= 15
+            AND minute <= 25
+            AND activity = 'exit'
+
+        )
+
+    )
+    AND year = 2023
+    AND month = 7
+    AND day = 28
+);
+
+SELECT * FROM airports
+LIMIT 5;
