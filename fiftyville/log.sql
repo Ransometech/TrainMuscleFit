@@ -137,11 +137,56 @@ WHERE phone_number IN
     AND day = 28
 );
 
+
+
+
 SELECT * FROM airports
 LIMIT 5;
 
 SELECT * FROM flights
-LIMIT 5;
+JOIN passengers
+ON id = flight_id
+WHERE passport_number IN
+(
+    SELECT passport_number FROM people
+    WHERE phone_number IN
+    (
+            SELECT caller FROM phone_calls
+            WHERE caller IN
+        (
+            SELECT phone_number FROM bank_accounts
+            JOIN people
+            ON id = person_id
+            WHERE account_number IN
+            (
+                SELECT account_number FROM atm_transactions
+                WHERE atm_location = 'Leggett Street'
+                AND year = 2023
+                AND month = 7
+                AND day = 28
+            )
+            AND license_plate IN
+            (
+                SELECT license_plate
+                FROM bakery_security_logs
+                WHERE year = 2023
+                AND month = 7
+                AND day = 28
+                AND hour = 10
+                AND minute >= 15
+                AND minute <= 25
+                AND activity = 'exit'
+
+            )
+
+        )
+        AND year = 2023
+        AND month = 7
+        AND day = 28
+    )
+
+
+)
 
 SELECT * FROM passengers
 LIMIT 5;
