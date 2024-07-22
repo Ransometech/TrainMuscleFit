@@ -27,6 +27,7 @@ AND day = 28;
 
 -- Check suspect bank accounts
 SELECT * FROM bank_accounts
+WHERE account_number IN ()
 LIMIT 5;
 
 -- Find licence plate and activity
