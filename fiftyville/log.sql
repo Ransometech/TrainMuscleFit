@@ -186,7 +186,7 @@ WHERE passport_number IN
     )
 
 
-);
-
-SELECT * FROM passengers
-LIMIT 5;
+)
+AND year = 2023
+AND month = 7
+AND day = 28;
