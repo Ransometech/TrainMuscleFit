@@ -22,6 +22,7 @@ AND year = 2023
 AND month = 7
 AND day = 28
 LIMIT 5;
+-- Check suspect bank accounts
 
 
 -- Find licence plate and activity
