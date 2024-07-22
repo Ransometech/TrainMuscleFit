@@ -1,6 +1,6 @@
 SELECT name FROM people
 WHERE name != 'Kevin Bacon'
-AND WHERE id IN (
+AND id IN (
     SELECT person_id
     FROM stars
     JOIN movies
