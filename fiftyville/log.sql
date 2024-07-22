@@ -143,3 +143,5 @@ LIMIT 5;
 SELECT * FROM flights
 LIMIT 5;
 
+SELECT * FROM passengers
+LIMIT 5;
