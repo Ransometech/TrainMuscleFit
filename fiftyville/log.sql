@@ -19,7 +19,7 @@ AND day = 28
 
 
 -- Find suspections ATM
-SELECT * FROM atm_transactions
+SELECT account_number FROM atm_transactions
 WHERE atm_location = 'Leggett Street'
 AND year = 2023
 AND month = 7
@@ -27,8 +27,13 @@ AND day = 28;
 
 -- Check suspect bank accounts
 SELECT * FROM bank_accounts
-WHERE account_number IN ()
-LIMIT 5;
+WHERE account_number IN (
+    SELECT account_number FROM atm_transactions
+    WHERE atm_location = 'Leggett Street'
+    AND year = 2023
+    AND month = 7
+    AND day = 28
+);
 
 -- Find licence plate and activity
 SELECT * FROM bakery_security_logs
