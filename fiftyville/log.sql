@@ -190,4 +190,5 @@ AND month = 7
 AND day = 29;
 
 SELECT * FROM airports
-LIMIT 5;
+WHERE id = 8;
+
