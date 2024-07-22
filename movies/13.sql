@@ -4,5 +4,11 @@ WHERE id IN (
     FROM stars
     JOIN movies
     ON movie_id = id
-    WHERE movies =
+    WHERE id IN (
+        SELECT movie_id
+        FROM stars
+        JOIN people
+        ON person_id = people.id
+        WHERE name = 'Kevin Bacon'
+    )
 )
