@@ -20,10 +20,11 @@ SELECT * FROM atm_transactions
 WHERE atm_location = 'Humphrey Lane'
 AND year = 2023
 AND month = 7
-AND day = 28
-LIMIT 5;
--- Check suspect bank accounts
+AND day = 28;
 
+-- Check suspect bank accounts
+SELECT * FROM bank_accounts
+LIMIT 5;
 
 -- Find licence plate and activity
 SELECT * FROM bakery_security_logs
