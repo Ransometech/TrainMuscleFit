@@ -12,8 +12,8 @@ Interviews were conducted today with three witnesses who were present at the tim
 -- Use interviews to find suspects
 SELECT * FROM interviews
 WHERE year = 2023
-AND month = 8
-LIMIT 1;
+AND month = 7
+AND day = 28;
 
 -- Find suspections ATM
 SELECT * FROM atm_transactions
