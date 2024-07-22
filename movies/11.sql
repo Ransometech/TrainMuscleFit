@@ -8,4 +8,4 @@ WHERE id IN
         WHERE people.name = 'Chadwick Boseman'
     ) ORDER BY rating
 )
-;
+LIMIT 5;
