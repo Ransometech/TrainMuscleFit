@@ -5,7 +5,7 @@ SELECT * FROM crime_scene_reports
 WHERE year = 2023
 AND month = 7
 AND street = 'Humphrey Street';
-/*Humphrey Street | Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery.
+/* id 295. Humphrey Street | Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery.
 Interviews were conducted today with three witnesses who were present at the time
  – each of their interview transcripts mentions the bakery.*/
 
@@ -15,10 +15,5 @@ WHERE year = 2023
 AND month = 7
 AND minute = 15
 AND hour = 10;
+-- id 459| day 31, activity exit, license_plate 11J91FW
 
--- day 31, activity exit, license_plate 11J91FW
-/* +-----+------+-------+-----+------+--------+----------+---------------+
-| id  | year | month | day | hour | minute | activity | license_plate |
-+-----+------+-------+-----+------+--------+----------+---------------+
-| 459 | 2023 | 7     | 31  | 10   | 15     | exit     | 11J91FW       |
-+-----+------+-------+-----+------+--------+----------+---------------+*/
