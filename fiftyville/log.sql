@@ -25,7 +25,7 @@ AND year = 2023
 AND month = 7
 AND day = 28;
 
--- Check suspect bank accounts
+-- Check suspect bank accounts, licence, names
 SELECT * FROM bank_accounts
 JOIN people
 ON id = person_id
