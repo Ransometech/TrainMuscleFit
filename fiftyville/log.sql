@@ -25,6 +25,7 @@ AND year = 2023
 AND month = 7
 AND day = 28;
 
+SELECT * FROM
 -- Check suspect bank accounts
 SELECT * FROM bank_accounts
 LIMIT 5;
