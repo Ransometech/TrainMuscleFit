@@ -17,6 +17,10 @@ AND minute = 15
 AND hour = 10;
 -- id 459| day 31, activity exit, license_plate 11J91FW
 
+-- FInd suspect with LICENSE Plate
 SELECT * FROM people
-WHERE license_plate = '11J91FW'
+WHERE license_plate = '11J91FW';
+
+SELECT * FROM interviews
 LIMIT 5;
+
