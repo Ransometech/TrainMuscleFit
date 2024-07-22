@@ -33,7 +33,7 @@ LIMIT 5;
 SELECT * FROM bakery_security_logs
 WHERE year = 2023
 AND month = 7
---AND minute = 15
+AND day = 28
 AND hour = 10
 ORDER BY minute;
 -- id 459| day 31, activity exit, license_plate 11J91FW
