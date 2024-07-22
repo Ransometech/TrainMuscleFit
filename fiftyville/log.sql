@@ -27,6 +27,8 @@ AND day = 28;
 
 -- Check suspect bank accounts
 SELECT * FROM bank_accounts
+JOIN people
+ON id = person_id
 WHERE account_number IN (
     SELECT account_number FROM atm_transactions
     WHERE atm_location = 'Leggett Street'
