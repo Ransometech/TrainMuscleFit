@@ -90,6 +90,9 @@ WHERE caller IN
 
     )
 
-);
+)
+AND year = 2023
+AND month = 7
+AND day = 28;
 
 
