@@ -35,6 +35,9 @@ WHERE account_number IN (
     AND year = 2023
     AND month = 7
     AND day = 28
+)
+AND licence_plate IN (
+
 );
 
 -- Find licence plate and activity
@@ -47,7 +50,5 @@ ORDER BY minute;
 -- id 459| day 31, activity exit, license_plate 11J91FW
 
 -- FInd suspect with LICENSE Plate
-SELECT * FROM people
-WHERE license_plate = '11J91FW';
 
 
