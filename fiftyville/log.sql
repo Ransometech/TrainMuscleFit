@@ -35,7 +35,7 @@ WHERE year = 2023
 AND month = 7
 --AND minute = 15
 AND hour = 10
-;
+ORDER BY minute;
 -- id 459| day 31, activity exit, license_plate 11J91FW
 
 -- FInd suspect with LICENSE Plate
