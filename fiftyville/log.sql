@@ -16,8 +16,6 @@ AND month = 7
 AND day = 28
 ;
 
-
-
 -- Find suspections ATM
 SELECT account_number FROM atm_transactions
 WHERE atm_location = 'Leggett Street'
@@ -136,9 +134,6 @@ WHERE phone_number IN
     AND month = 7
     AND day = 28
 );
-
-
-
 
 /*From the interviews, I found the earliest flight on the 29th.
 I already gathered the suspect's phone number and now I have the passport.
