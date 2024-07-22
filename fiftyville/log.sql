@@ -189,6 +189,8 @@ AND year = 2023
 AND month = 7
 AND day = 29;
 
+-- Find suspect origin and destination
 SELECT * FROM airports
-WHERE id = 8;
+WHERE id IN (8, 4);
+
 
