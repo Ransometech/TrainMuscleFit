@@ -29,14 +29,24 @@ AND day = 28;
 SELECT * FROM bank_accounts
 JOIN people
 ON id = person_id
-WHERE account_number IN (
+WHERE account_number IN
+(
     SELECT account_number FROM atm_transactions
     WHERE atm_location = 'Leggett Street'
     AND year = 2023
     AND month = 7
     AND day = 28
 )
-AND licence_plate IN (
+AND licence_plate IN
+(
+    SELECT licence_plate
+    FROM bakery_security_logs
+    WHERE year = 2023
+    AND month = 7
+    AND day = 28
+    AND hour = 10
+    AND minute >= 15
+    
 
 );
 
