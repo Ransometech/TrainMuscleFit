@@ -47,6 +47,7 @@ AND license_plate IN
     AND hour = 10
     AND minute >= 15
     AND minute <= 25
+    AND activity = 'exit'
 
 
 );
