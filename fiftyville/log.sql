@@ -17,7 +17,7 @@ LIMIT 1;
 
 -- Find suspections ATM
 SELECT * FROM atm_transactions
-WHERE atm_location = 'Humphrey Street'
+WHERE atm_location = 'Humphrey Lane'
 LIMIT 5;
 
 
