@@ -11,6 +11,6 @@ Interviews were conducted today with three witnesses who were present at the tim
 
 SELECT * FROM bakery_security_logs
 WHERE year = 2023
-AND month = 7;
-WHERE minute = 15
+AND month = 7
+AND minute = 15
 AND hour = 10;
