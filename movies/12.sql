@@ -1,9 +1,8 @@
-SELECT title, FROM movies
-WHERE movie_id IN (
+SELECT title FROM movies
+WHERE id IN (
         SELECT movie_id FROM stars
         JOIN people ON person_id = people.id
-        WHERE people.name = 'Chadwick Boseman'
+        WHERE name = 'Bradley Cooper'
+        AND name = 'Jennifer Lawrence'
     )
-
-ORDER BY rating DESC
-LIMIT 5;
+;
