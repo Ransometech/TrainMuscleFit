@@ -20,8 +20,7 @@ AND day = 28
 
 -- Find suspections ATM
 SELECT * FROM atm_transactions
-WHERE atm_location = 'Humphrey Lane'
-AND year = 2023
+WHERE year = 2023
 AND month = 7
 AND day = 28;
 
