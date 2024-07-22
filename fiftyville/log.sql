@@ -17,3 +17,5 @@ AND minute = 15
 AND hour = 10;
 -- id 459| day 31, activity exit, license_plate 11J91FW
 
+SELECT * FROM flight
+LIMIT 5;
