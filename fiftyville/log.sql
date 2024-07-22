@@ -63,7 +63,11 @@ ORDER BY minute;
 
 -- FInd call logs
 SELECT * FROM phone_calls
-WHERE caller
+WHERE caller IN
+(
+    
+
+)
 LIMIT 5;
 
 
