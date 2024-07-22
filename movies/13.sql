@@ -12,5 +12,6 @@ AND id IN (
         JOIN people
         ON person_id = people.id
         WHERE name = 'Kevin Bacon'
+        AND birth = 1958
     )
 )
