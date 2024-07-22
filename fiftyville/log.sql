@@ -186,7 +186,7 @@ WHERE passport_number IN
     )
 
 
-)
+);
 
 SELECT * FROM passengers
 LIMIT 5;
