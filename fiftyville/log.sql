@@ -61,6 +61,8 @@ AND hour = 10
 ORDER BY minute;
 -- id 459| day 31, activity exit, license_plate 11J91FW
 
--- FInd suspect with LICENSE Plate
+-- FInd call logs
+SELECT * FROM phone_calls
+LIMIT 5;
 
 
