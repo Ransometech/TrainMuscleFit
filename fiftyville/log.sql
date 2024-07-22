@@ -21,8 +21,4 @@ AND hour = 10;
 SELECT * FROM people
 WHERE license_plate = '11J91FW';
 
-SELECT * FROM interviews
-WHERE year = 2023
-AND month = 8
-;
 
