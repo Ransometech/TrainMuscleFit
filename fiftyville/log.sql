@@ -9,8 +9,16 @@ AND street = 'Humphrey Street';
 Interviews were conducted today with three witnesses who were present at the time
  – each of their interview transcripts mentions the bakery.*/
 
+-- Find licence plate and activity
 SELECT * FROM bakery_security_logs
 WHERE year = 2023
 AND month = 7
 AND minute = 15
 AND hour = 10;
+
+-- day 31, activity exit, license_plate 11J91FW
+/* +-----+------+-------+-----+------+--------+----------+---------------+
+| id  | year | month | day | hour | minute | activity | license_plate |
++-----+------+-------+-----+------+--------+----------+---------------+
+| 459 | 2023 | 7     | 31  | 10   | 15     | exit     | 11J91FW       |
++-----+------+-------+-----+------+--------+----------+---------------+*/
