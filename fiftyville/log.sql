@@ -139,3 +139,7 @@ WHERE phone_number IN
 
 SELECT * FROM airports
 LIMIT 5;
+
+SELECT * FROM flights
+LIMIT 5;
+
