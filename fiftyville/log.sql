@@ -200,3 +200,11 @@ WHERE id IN (8, 4);
 SELECT * FROM people
 WHERE passport_number = 5773159633;
 
+
+SELECT * FROM phone_calls
+WHERE caller IN
+(
+    SELECT * FROM people
+    WHERE passport_number = 5773159633;
+)
+
