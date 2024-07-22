@@ -140,7 +140,10 @@ WHERE phone_number IN
 
 
 
-
+/*From the interviews, I found the earliest flight on the 29th.
+I already gathered the suspect's phone number and now I have the passport.
+I traced the flight origin and destination, identified the earliest flight, and found a single suspect.
+I used the suspect's phone number to find the receiver on the day of the crime, and from the receiver's phone number, I obtained the receiver's name.*/
 SELECT * FROM flights
 JOIN passengers
 ON id = flight_id
