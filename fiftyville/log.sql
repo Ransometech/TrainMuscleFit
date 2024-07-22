@@ -9,3 +9,6 @@ AND street = 'Humphrey Street';
 Interviews were conducted today with three witnesses who were present at the time
  – each of their interview transcripts mentions the bakery.*/
 
+SELECT * FROM bakery_security_logs
+WHERE year = 2023
+AND month = 7;
