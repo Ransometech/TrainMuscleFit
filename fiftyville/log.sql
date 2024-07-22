@@ -201,10 +201,18 @@ SELECT * FROM people
 WHERE passport_number = 5773159633;
 
 
-SELECT * FROM phone_calls
-WHERE caller IN
+SELECT name FROM people
+WHERE phone_number IN
 (
-    SELECT * FROM people
-    WHERE passport_number = 5773159633;
-)
+    SELECT receiver FROM phone_calls
+    WHERE caller IN
+    (
+        SELECT phone_number FROM people
+        WHERE passport_number = 5773159633
+    )
+    AND year = 2023
+    AND month = 7
+    AND day = 28
+    AND duration <= 60
+);
 
