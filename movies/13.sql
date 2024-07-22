@@ -1,3 +1,4 @@
+-- write a SQL query to list the names of all people who starred in a movie in which Kevin Bacon also starred Kevin Bacon himself should not be included
 SELECT name FROM people
 WHERE name != 'Kevin Bacon'
 AND id IN (
