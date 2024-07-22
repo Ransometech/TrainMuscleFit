@@ -190,17 +190,12 @@ AND month = 7
 AND day = 29;
 
 -- suspect passport_number is 5773159633
-
 -- Find suspect origin and destination
 SELECT * FROM airports
 WHERE id IN (8, 4);
 
 
-
-SELECT * FROM people
-WHERE passport_number = 5773159633;
-
-
+-- Find the acommpliced
 SELECT name FROM people
 WHERE phone_number IN
 (
