@@ -31,8 +31,11 @@
             let input = document.querySelector('input');
             if(input.value == 'Hey){
                input.style.backgroundColor = 'green';
-               document.querySelector('#feedback2').innerHTML = 
-        }
+               document.querySelector('#feedback2').innerHTML = 'Correct!';
+            } else {
+                input.style.backgroundColor = 'red';
+                document.querySelector('#feedback2').innerHTMl = 'Incorrect';
+            }
         })
 
         </script>
