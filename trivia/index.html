@@ -32,7 +32,7 @@
                 if (checkButton) {
                     checkButton.addEventListener('click', function() {
                         let input = document.querySelector('input');
-                        if (input.value === 'Abuja') {
+                        if (input.value.toLowerCase() === 'abuja') {
                             input.style.backgroundColor = 'green';
                             document.querySelector('#feedback2').innerHTML = 'Correct!';
                         } else {
