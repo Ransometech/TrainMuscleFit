@@ -8,7 +8,14 @@
         <script>
             // TODO: Add code to check answers to questions
             // Run scriot once DOM is loaded
-            document.addEventListener('DOMContLoaded'), function()
+            document.addEventListener('DOMContentLoaded'), function() {
+                // When correct answer is clicked, change color to green
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function()){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback1').innerHTML = 'Correct!';
+                });
+            }
         </script>
     </head>
     <body>
