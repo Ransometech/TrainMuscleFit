@@ -1,3 +1,4 @@
+/* Base styles for body */
 body {
     background-color: #fff;
     color: #212529;
@@ -8,6 +9,7 @@ body {
     text-align: left;
 }
 
+/* Container styles */
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -15,6 +17,7 @@ body {
     padding-right: 15px;
 }
 
+/* Header styles */
 .header {
     background-color: #477bff;
     color: #fff;
@@ -23,20 +26,24 @@ body {
     text-align: center;
 }
 
+/* Section styles */
 .section {
     padding: 0.5rem 2rem 1rem 2rem;
 }
 
+/* Section hover effect */
 .section:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+/* Heading styles */
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
 }
 
+/* Button styles */
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
@@ -50,11 +57,13 @@ button, input[type="submit"] {
     vertical-align: middle;
 }
 
+/* Input text field styles */
 input[type="text"] {
     line-height: 1.8;
     width: 25%;
 }
 
+/* Input text field hover effect */
 input[type="text"]:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;

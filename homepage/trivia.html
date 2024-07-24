@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
     <link href="styles.css" rel="stylesheet">
     <title>Trivia!</title>
     <script>
+        // JavaScript to handle trivia interactions
         document.addEventListener('DOMContentLoaded', function() {
+            // Handle correct answer click
             let correct = document.querySelector('.correct');
             if (correct) {
                 correct.addEventListener('click', function() {
@@ -14,6 +18,7 @@
                 });
             }
 
+            // Handle incorrect answer click
             let incorrects = document.querySelectorAll('.incorrect');
             incorrects.forEach(function(incorrect) {
                 incorrect.addEventListener('click', function() {
@@ -22,6 +27,7 @@
                 });
             });
 
+            // Handle free response check
             let checkButton = document.querySelector('#check');
             if (checkButton) {
                 checkButton.addEventListener('click', function() {
@@ -39,9 +45,11 @@
     </script>
 </head>
 <body>
+    <!-- Header -->
     <div class="header">
         <h1>Trivia!</h1>
     </div>
+    <!-- Main content area -->
     <div class="container">
         <div class="section">
             <h2>Part 1: Multiple Choice</h2>
@@ -59,9 +67,4 @@
             <hr>
             <h3>What is the capital of Nigeria?</h3>
             <input type="text" />
-            <button id="check">Check Answer</button>
-            <p id="feedback2"></p>
-        </div>
-    </div>
-</body>
-</html>
+            <button
