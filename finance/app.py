@@ -126,6 +126,8 @@ def register():
         elif request.form.get("confirm_password") != request.form.get("password"):
             return apology("The password confirmation does not match", 403)
 
+        
+
     else:
         return render_template("register.html")
 
