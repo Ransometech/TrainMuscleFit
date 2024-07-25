@@ -113,7 +113,18 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
-        pass
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
+
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("must provide password", 403)
+
+        elif not request.form.get("confirm_password"):
+            return apology("must confirm password", 403)
+
+        elif request.form.get("confirm_password") != request.form.get("password"):
+            return apology("must confirm password", 403)
     else
         return render_template("register.html")
 
