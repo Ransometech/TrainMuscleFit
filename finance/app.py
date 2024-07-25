@@ -132,7 +132,7 @@ def register():
         db.execute("INSERT INTO birthdays (username, hash,) VALUES(?, ?)",username, hash_password)
         reg_rows = db.execute(
             "SELECT * FROM users WHERE username = ?", username)
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = reg_rows[0]["id"]
         return redirect("/")
 
     else:
