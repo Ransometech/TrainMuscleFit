@@ -130,7 +130,7 @@ def register():
         elif request.form.get("confirm_password") != request.form.get("password"):
             return apology("The password confirmation does not match", 403)
 
-
+        # Check if username is available
         check_username = db.execute(
             "SELECT * FROM users WHERE username = ?", username)
         if len(check_username) != 0:
