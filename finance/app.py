@@ -108,7 +108,7 @@ def quote():
     """Get stock quote."""
     return apology("TODO")
 
-
+te
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
