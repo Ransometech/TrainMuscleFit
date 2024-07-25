@@ -126,7 +126,8 @@ def register():
         elif request.form.get("confirm_password") != request.form.get("password"):
             return apology("The password confirmation does not match", 403)
 
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        hash_password = generate_password_hash(request.form.get("password"))
+        db.execute("INSERT INTO birthdays (username, hash,) VALUES(?, ?)", request.form.get("username"), hash_password)
 
     else:
         return render_template("register.html")
