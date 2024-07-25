@@ -131,8 +131,7 @@ def register():
         hash_password = generate_password_hash(request.form.get("password"))
         db.execute("INSERT INTO birthdays (username, hash,) VALUES(?, ?)",username, hash_password)
         reg_rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", username
-        )
+            "SELECT * FROM users WHERE username = ?", username)
         session["user_id"] = rows[0]["id"]
         return redirect("/")
 
