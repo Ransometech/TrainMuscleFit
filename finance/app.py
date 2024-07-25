@@ -128,7 +128,7 @@ def register():
             return apology("The password confirmation does not match", 403)
 
         hash_password = generate_password_hash(request.form.get("password"))
-        db.execute("INSERT INTO birthdays (username, hash,) VALUES(?, ?)", request.form.get("username"), hash_password)
+        reg_rows = db.execute("INSERT INTO birthdays (username, hash,) VALUES(?, ?)", request.form.get("username"), hash_password)
         session["user_id"] = rows[0]["id"]
 
     else:
