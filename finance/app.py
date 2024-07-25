@@ -132,7 +132,8 @@ def register():
         print("worked")
         hash_password = generate_password_hash(request.form.get("password"))
         print("worked2")
-        db.execute("INSERT INTO users (username, hash,) VALUES(?, ?)",username, hash_password)
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",username, hash_password)
+        print("worked3")
         reg_rows = db.execute(
             "SELECT * FROM users WHERE username = ?", username)
         session["user_id"] = reg_rows[0]["id"]
