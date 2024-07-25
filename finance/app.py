@@ -70,6 +70,7 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
+
         rows = db.execute(
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
         )
@@ -128,7 +129,9 @@ def register():
             return apology("The password confirmation does not match", 403)
 
         username = request.form.get("username")
+        print("worked")
         hash_password = generate_password_hash(request.form.get("password"))
+        print("worked2")
         db.execute("INSERT INTO users (username, hash,) VALUES(?, ?)",username, hash_password)
         reg_rows = db.execute(
             "SELECT * FROM users WHERE username = ?", username)
