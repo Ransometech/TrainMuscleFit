@@ -115,7 +115,9 @@ def register():
     """Register user"""
     session.clear()
     if request.method == "POST":
-        if not request.form.get("username"):
+        username = request.form.get("username")
+
+        if not username:
             return apology("must provide username", 403)
 
         # Ensure password was submitted
@@ -128,7 +130,12 @@ def register():
         elif request.form.get("confirm_password") != request.form.get("password"):
             return apology("The password confirmation does not match", 403)
 
-        username = request.form.get("username")
+
+        check_username = db.execute(
+            "SELECT * FROM users WHERE username = ?", username)
+        if len(check_user) != 0:
+            return apology("Username exist", 403)
+
         print("worked")
         hash_password = generate_password_hash(request.form.get("password"))
         print("worked2")
