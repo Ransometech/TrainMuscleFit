@@ -9,7 +9,7 @@
     <form action="/sell" method="post">
         <div class="mb-3">
             <select class="form-control mx-auto w-auto" name="symbol" required>
-                <option value="" disabled selected>Select Symbol</option>
+                <option value="" disabled selected>Symbol</option>
                 {% for symbol in symbols %}
                     <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
                 {% endfor %}
