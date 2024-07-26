@@ -11,10 +11,10 @@
         </div>
         <button class="btn btn-primary" type="submit">Quote</button>
     </form>
-    {% if get_flashed_messages() %}
+    {% if get_quote %}
             <header>
                 <div class="alert alert-primary mb-0 text-center" role="alert">
-                    {{ get_flashed_messages() | join(" ") }}
+                    {{ get_quote }}
                 </div>
             </header>
     {% endif %}
