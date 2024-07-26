@@ -45,9 +45,12 @@ def index():
     );
     ''')
 
-    
+    index_portfolio = db.execute(
+            "SELECT * FROM portfolio WHERE username = ?", request.form.get("username")
+        )
+
                     )
-    return render_template("index.html")
+    return render_template("index.html", portfolio = )
 
 
 @app.route("/buy", methods=["GET", "POST"])
