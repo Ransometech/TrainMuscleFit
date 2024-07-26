@@ -5,25 +5,5 @@
 {% endblock %}
 
 {% block main %}
-<div class="section">
 
-    <h2>All Birthdays</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Birthday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- TODO: Loop through the database entries to display them in this table -->
-            {% for birthday in birthdays %}
-            <tr></tr>
-                <td>{{ birthday.name }}</td>
-                <td>{{ birthday.month|string ~ "/" ~ birthday.day|string}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
 {% endblock %}
