@@ -52,7 +52,7 @@ def index():
     portfolio = db.execute("SELECT symbol, shares, price, total FROM portfolio WHERE user_id = ?", user_id)
 
     # Get the user's current cash balance
-    usr = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    user = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = user[0]['cash'] if user else 0
 
     # Calculate the total portfolio value
