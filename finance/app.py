@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     print("jjindex_portfolio222")
-    
+
     db.execute('''
     CREATE TABLE IF NOT EXISTS portfolio (
         user_id INTEGER,
@@ -51,7 +51,12 @@ def index():
     user_id = session.get("user_id")
 
     # Get the user's portfolio
-    portfolio = db.execute("SELECT symbol, shares, price, total FROM portfolio WHERE user_id = ?", user_id)
+    portfolio = db.execute("""
+        SELECT symbol, SUM(shares) AS shares, price, SUM(total) AS total
+        FROM portfolio
+        WHERE user_id = ?
+        GROUP BY symbol, price
+    """, user_id)
 
     # Get the user's current cash balance
     user = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
