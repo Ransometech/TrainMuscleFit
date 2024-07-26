@@ -1,14 +1,12 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+Portfolio
 {% endblock %}
 
 {% block main %}
-<div class="section">
-
-    <h2>Portfolio</h2>
-<table>
+<h2>Portfolio</h2>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Symbol</th>
@@ -18,35 +16,22 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Example row, replace with dynamic content from your database -->
-        <tr>
-            <td>USD</td>
-            <td>6</td>
-            <td>$113.51</td>
-            <td>$681.06</td>
-        </tr>
-        <!-- Loop through the database entries to display them in this table -->
-        <!-- Example of how it might look in a templating language like Jinja2 for Flask -->
         {% for entry in portfolio %}
         <tr>
-            <td>{{ entry.Symbol }}</td>
-            <td>{{ entry.Shares }}</td>
-            <td>{{ entry.Price }}</td>
-            <td>{{ entry.TOTAL }}</td>
+            <td>{{ entry[0] }}</td>
+            <td>{{ entry[1] }}</td>
+            <td>{{ entry[2] }}</td>
+            <td>{{ entry[3] }}</td>
         </tr>
         {% endfor %}
-        <!-- Cash row -->
         <tr>
             <td colspan="3">Cash</td>
-            <td>$9,318.94</td>
+            <td>${{ cash }}</td>
         </tr>
-        <!-- Total row -->
         <tr>
             <td colspan="3">TOTAL</td>
-            <td>$10,000.00</td>
+            <td>${{ total }}</td>
         </tr>
     </tbody>
 </table>
-
-</div>
 {% endblock %}
