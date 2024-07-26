@@ -20,8 +20,8 @@ Portfolio
         <tr>
             <td class="text-start">{{ value.symbol }}</td>
             <td class="text-end">{{ value.shares }}</td>
-            <td class="text-end">{{ value.price }}</td>
-            <td class="text-end">{{ value.total }}</td>
+            <td class="text-end">{{ "%.2f"|format(value.price) }}</td>
+            <td class="text-end">{{ "%.2f"|format(value.total) }}</td>
         </tr>
         {% endfor %}
     </tbody>
