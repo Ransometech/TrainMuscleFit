@@ -78,7 +78,7 @@ def buy():
         shares = int(request.form.get("shares"))
         get_quote = lookup(symbol)
         if get_quote is None:
-            return apology("Invalid Symbol", 403)
+            return apology("Invalid Symbol", 400)
 
         price = get_quote["price"]
         total_cost = price * shares
@@ -88,7 +88,7 @@ def buy():
         # Fetch user's current cash balance
         user = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
         if not user or user[0]['cash'] < total_cost:
-            return apology("Insufficient funds", 403)
+            return apology("Insufficient funds", 400)
 
         # Update the user's cash balance
         db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, user_id)
