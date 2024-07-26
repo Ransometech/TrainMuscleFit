@@ -228,18 +228,17 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares_to_sell = int(request.form.get("shares"))
+        sell_shares = int(request.form.get("shares"))
         get_quote = lookup(symbol)
         if get_quote is None:
             return apology("Invalid Symbol", 403)
 
         price = get_quote["price"]
-        total_value = price * shares_to_sell
+        total_value = price * sell_shares
 
-        # Assume user_id is obtained from session
         user_id = session.get("user_id")
 
-        # Fetch user's current shares of the stock
+        # Get user's current shares of the stock
         user_shares = db.execute("SELECT SUM(shares) as total_shares FROM portfolio WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)
         if not user_shares or user_shares[0]['total_shares'] < shares_to_sell:
             return apology("Insufficient shares", 403)
