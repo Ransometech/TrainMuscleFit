@@ -65,7 +65,7 @@ def index():
     # Calculate the total portfolio value
     total_portfolio_value = sum([item['total'] for item in portfolio]) + cash
 
-    return render_template('index.html', portfolio=portfolio, cash=cash, total=round(total_portfolio_value), 2)
+    return render_template('index.html', portfolio=portfolio, cash=round(cash,2), total=round(total_portfolio_value, 2))
 
 
 @app.route("/buy", methods=["GET", "POST"])
