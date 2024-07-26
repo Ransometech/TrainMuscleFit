@@ -46,10 +46,9 @@ def index():
     ''')
 
     index_portfolio = db.execute(
-            "SELECT * FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
+            "SELECT Symbol, Shares,  FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
         )
 
-                    )
     return render_template("index.html", portfolio = )
 
 
