@@ -99,7 +99,7 @@ def buy():
 
         # Insert the transaction into the portfolio table
         db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
-                   user_id, symbol, shares, price, total_cost)
+                   user_id, symbol, shares, round(price, 2), total_cost)
 
         flash(f'Bought {shares} shares of {symbol}!')
         return redirect("/")
