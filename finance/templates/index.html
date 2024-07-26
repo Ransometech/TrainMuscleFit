@@ -24,14 +24,16 @@ Portfolio
             <td>{{ entry[3] }}</td>
         </tr>
         {% endfor %}
-        <tr>
-            <td colspan="3">Cash</td>
-            <td>${{ cash }}</td>
-        </tr>
-        <tr>
-            <td colspan="3">TOTAL</td>
-            <td>${{ total }}</td>
-        </tr>
     </tbody>
+    <tfoot>
+        <tr>
+            <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+            <td class="border-0 text-end">$9,318.94</td>
+        </tr>
+        <tr>
+            <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+            <td class="border-0 w-bold text-end">$10,000.00</td>
+        </tr>
+    </tfoot>
 </table>
 {% endblock %}
