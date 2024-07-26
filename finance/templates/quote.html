@@ -5,19 +5,16 @@
 {% endblock %}
 
 {% block main %}
-
     {% if get_quote %}
-            <header>
-
-                    <p>A share of USD ({{ get_quote[symbol] }}) cost {{ get_quote[price]}} </p
-            </header>
+        <header>
+            <p>A share of {{ get_quote.symbol }} costs ${{ get_quote.price }}</p>
+        </header>
+    {% else %}
+        <form action="/quote" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Quote</button>
+        </form>
     {% endif %}
-
-    else
-    <form action="/quote" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
-        </div>
-        <button class="btn btn-primary" type="submit">Quote</button>
-    </form>
 {% endblock %}
