@@ -37,16 +37,16 @@ def index():
     db.execute('''
     CREATE TABLE IF NOT EXISTS portfolio (
         user_id INTEGER,
-        Symbol TEXT,
-        Shares INTEGER,
-        Price NUMERIC,
-        TOTAL NUMERIC,
+        symbol TEXT,
+        shares INTEGER,
+        price NUMERIC,
+        total NUMERIC,
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
 
     index_portfolio = db.execute(
-            "SELECT Symbol, Shares,Price FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
+            "SELECT symbol, shares,price,total, cash FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
         )
 
     return render_template("index.html", portfolio = )
