@@ -64,6 +64,7 @@ def buy():
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
         if symbol.upper() != "USD":
             return apology("Invalid Symbol", 403)
 
