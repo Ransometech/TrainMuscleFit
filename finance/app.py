@@ -80,7 +80,9 @@ def buy():
         if get_quote is None:
             return apology("Invalid Symbol", 400)
 
-        
+
+        if not shares.isdigit() or int(shares) <=0:
+            return apology("Invalid Shares", 200)
         shares = int(shares)
         price = get_quote["price"]
         total_cost = price * shares
