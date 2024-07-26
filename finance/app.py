@@ -161,9 +161,6 @@ def login():
 def change_password():
     """Change user password"""
 
-    # Forget any user_id
-    session.clear()
-
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
         # Ensure username was submitted
