@@ -100,7 +100,12 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    user_id = session.get("user_id")
+
+    # Get the user's transaction history
+    history = db.execute("SELECT symbol, shares, price, total, timestamp FROM portfolio WHERE user_id = ?", user_id)
+
+    return render_template('history.html', history=history)
 
 
 @app.route("/login", methods=["GET", "POST"])

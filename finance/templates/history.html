@@ -1,21 +1,31 @@
-cd
 {% extends "layout.html" %}
 
 {% block title %}
-    Quote
+Transaction History
 {% endblock %}
 
 {% block main %}
-    {% if get_quote %}
-        <header>
-            <p>A share of {{ get_quote.symbol }} costs ${{ get_quote.price }}</p>
-        </header>
-    {% else %}
-        <form action="/quote" method="post">
-            <div class="mb-3">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
-            </div>
-            <button class="btn btn-primary" type="submit">Quote</button>
-        </form>
-    {% endif %}
+<h2>Transaction History</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">TOTAL</th>
+            <th class="text-end">Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in history %}
+        <tr>
+            <td class="text-start">{{ entry.symbol }}</td>
+            <td class="text-end">{{ entry.shares }}</td>
+            <td class="text-end">{{ entry.price }}</td>
+            <td class="text-end">{{ entry.total }}</td>
+            <td class="text-end">{{ entry.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
