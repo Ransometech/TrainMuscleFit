@@ -65,11 +65,10 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        
-        try:
-            get_quote = lookup(symbol)
-        except:
+        get_quote = lookup(symbol)
+        if get_quote is None:
             return apology("Invalid Symbol", 403)
+        
         total_shares = get_quote["price"] * shares
         print(type(total_shares), total_shares)
         return render_template("buy.html", get_quote = get_quote)
