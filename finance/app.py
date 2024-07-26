@@ -71,7 +71,8 @@ def buy():
 
         total_shares = get_quote["price"] * int(shares)
         print(type(total_shares), total_shares)
-        return render_template("buy.html", get_quote = get_quote)
+
+        return render_template("index.html", get_quote = get_quote)
 
     else:
         return render_template("buy.html")
