@@ -172,7 +172,7 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         if symbol.upper() != "USD":
-            return apology("Invalid Symbol", 403)
+            return apology("Invalid Symbol", 400)
 
         get_quote = lookup(symbol)
         return render_template("quote.html", get_quote = get_quote)
