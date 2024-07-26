@@ -7,7 +7,7 @@
 {% block main %}
     {% if get_quote %}
         <header>
-            <p>A share of {{ get_quote.symbol }} costs ${{ get_quote.price }}</p>
+            <p>A share of {{ get_quote.symbol }} costs ${{ "%.2f"|format(get_quote.price) }}</p>
         </header>
     {% else %}
         <form action="/quote" method="post">
