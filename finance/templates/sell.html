@@ -1,20 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quote
+    Sell
 {% endblock %}
 
 {% block main %}
-    {% if get_quote %}
-        <header>
-            <p>A share of {{ get_quote.symbol }} costs ${{ get_quote.price }}</p>
-        </header>
-    {% else %}
-        <form action="/quote" method="post">
-            <div class="mb-3">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
-            </div>
-            <button class="btn btn-primary" type="submit">Quote</button>
-        </form>
-    {% endif %}
+    <h2>Sell Shares</h2>
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" min="1" name="shares" placeholder="Shares" type="number" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
 {% endblock %}

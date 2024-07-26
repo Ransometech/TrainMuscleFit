@@ -243,7 +243,7 @@ def sell():
         if not user_shares or user_shares[0]['total_shares'] < shares_to_sell:
             return apology("Insufficient shares", 403)
 
-        # Insert the transaction into the portfolio table as a negative value for selling
+        # Insert the transaction into the portfolio table
         db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
                    user_id, symbol, -shares_to_sell, price, -total_value)
 
@@ -251,7 +251,7 @@ def sell():
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_value, user_id)
 
         flash(f'Sold {shares_to_sell} shares of {symbol}!')
-        return redirect(url_for('index'))
+        return redirect("/")
 
     else:
         return render_template("sell.html")
