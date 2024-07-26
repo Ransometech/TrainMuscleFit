@@ -34,8 +34,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
-    create_portfolio_table = '''
+    db.execute('''
     CREATE TABLE IF NOT EXISTS portfolio (
         user_id INTEGER,
         Symbol TEXT,
@@ -44,7 +43,7 @@ def index():
         TOTAL TEXT,
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
-    '''
+    ''')
 
                     )
     return render_template("index.html")
