@@ -69,7 +69,7 @@ def buy():
             return apology("Invalid Symbol", 403)
 
         get_quote = lookup(symbol)
-        total_shares = get_quote["price"]
+        total_shares = get_quote["price"] * shares
         print(type(total_shares), total_shares)
         return render_template("buy.html", get_quote = get_quote)
 
