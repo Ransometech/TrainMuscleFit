@@ -85,7 +85,7 @@ def buy():
             return apology("Invalid Shares", 400)
         shares = int(shares)
         price = get_quote["price"]
-        total_cost = price * shares
+        total_cost = round(price * shares, 2)
 
         user_id = session.get("user_id")
 
@@ -99,7 +99,7 @@ def buy():
 
         # Insert the transaction into the portfolio table
         db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
-                   user_id, symbol, shares, round(price, 2), round(total_cost, 2))
+                   user_id, symbol, shares, round(price, 2), total_cost)
 
         flash(f'Bought {shares} shares of {symbol}!')
         return redirect("/")
