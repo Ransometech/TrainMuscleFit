@@ -18,10 +18,10 @@ Portfolio
     <tbody>
         {% for entry in portfolio %}
         <tr>
-            <td class="text-start">{{ entry[0] }}</td>
-            <td class="text-end">{{ entry[1] }}</td>
-            <td class="text-end">{{ entry[2] }}</td>
-            <td class="text-end">{{ entry[3] }}</td>
+            <td class="text-start">{{ entry.symbol }}</td>
+            <td class="text-end">{{ entry.shares }}</td>
+            <td class="text-end">{{ entry.price }}</td>
+            <td class="text-end">{{ entry.total }}</td>
         </tr>
         {% endfor %}
     </tbody>

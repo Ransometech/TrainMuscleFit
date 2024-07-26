@@ -64,17 +64,31 @@ def buy():
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         get_quote = lookup(symbol)
         if get_quote is None:
             return apology("Invalid Symbol", 403)
 
-        total_shares = get_quote["price"] * int(shares)
-        print(type(total_shares), total_shares)
+        price = get_quote["price"]
+        total_cost = price * shares
 
-        flash('Bought' + symbol + "!")
-        return render_template("index.html", get_quote = get_quote)
+        # Assume user_id is obtained from session
+        user_id = session.get("user_id")
 
+        # Fetch user's current cash balance
+        user = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        if not user or user[0]['cash'] < total_cost:
+            return apology("Insufficient funds", 403)
+
+        # Update the user's cash balance
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, user_id)
+
+        # Insert the transaction into the portfolio table
+        db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
+                   user_id, symbol, shares, price, total_cost)
+
+        flash(f'Bought {shares} shares of {symbol}!')
+        return redirect(url_for('index'))
     else:
         return render_template("buy.html")
 
