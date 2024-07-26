@@ -72,7 +72,6 @@ def buy():
         price = get_quote["price"]
         total_cost = price * shares
 
-        # Assume user_id is obtained from session
         user_id = session.get("user_id")
 
         # Fetch user's current cash balance
@@ -88,7 +87,7 @@ def buy():
                    user_id, symbol, shares, price, total_cost)
 
         flash(f'Bought {shares} shares of {symbol}!')
-        return redirect(url_for('index'))
+        return redirect("/")
     else:
         return render_template("buy.html")
 
