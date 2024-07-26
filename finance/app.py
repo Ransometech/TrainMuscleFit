@@ -47,7 +47,6 @@ def index():
 
     index_portfolio = db.execute(
             "SELECT symbol, shares, price, total, cash FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
-        )
 
     print(index_portfolio, "index_portfolio")
     return render_template("index.html", index_portfolio = index_portfolio)
