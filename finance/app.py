@@ -34,7 +34,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    print(index_portfolio, "jjindex_portfolio222")
+    print("jjindex_portfolio222")
 
     db.execute('''
     CREATE TABLE IF NOT EXISTS portfolio (
