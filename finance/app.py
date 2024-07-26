@@ -35,15 +35,16 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    db.execute(
-            "CREATE TABLE IF NOT EXISTS portfolio (
-                user_id INTEGER,
-                Symbol text,
-                Shares INTEGER,
-                Price text,
-                TOTAL text,
-                FOREIGN KEY(user_id) REFERENCES users(id)
-            )
+    create_portfolio_table = '''
+    CREATE TABLE IF NOT EXISTS portfolio (
+        user_id INTEGER,
+        Symbol TEXT,
+        Shares INTEGER,
+        Price TEXT,
+        TOTAL TEXT,
+        FOREIGN KEY(user_id) REFERENCES users(id)
+    );
+    '''
 
                     )
     return render_template("index.html")
