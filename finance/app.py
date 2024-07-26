@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     print("jjindex_portfolio222")
-
+    
     db.execute('''
     CREATE TABLE IF NOT EXISTS portfolio (
         user_id INTEGER,
@@ -47,10 +47,7 @@ def index():
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
-    db.execute('''
-    ALTER TABLE portfolio
-    ADD COLUMN timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
-    ''')
+
     user_id = session.get("user_id")
 
     # Get the user's portfolio
