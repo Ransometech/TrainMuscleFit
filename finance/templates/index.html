@@ -21,18 +21,18 @@ Portfolio
             <td class="text-start">{{ value.symbol }}</td>
             <td class="text-end">{{ value.shares }}</td>
             <td class="text-end">{{ value.price }}</td>
-            <td class="text-end">{{ value.total }}</td>
+            <td class="text-end">{{ "%.2f"|format(value.total) }}</td>
         </tr>
         {% endfor %}
     </tbody>
     <tfoot>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
-            <td class="border-0 text-end">${{ cash }}</td>
+            <td class="border-0 text-end">${{ "%.2f"|format(cash) }}</td>
         </tr>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
-            <td class="border-0 fw-bold text-end">${{ total }}</td>
+            <td class="border-0 fw-bold text-end">${{ "%.2f"|format(total) }}</td>
         </tr>
     </tfoot>
 </table>
