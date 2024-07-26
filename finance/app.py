@@ -39,8 +39,8 @@ def index():
         user_id INTEGER,
         Symbol TEXT,
         Shares INTEGER,
-        Price TEXT,
-        TOTAL TEXT,
+        Price NUMERIC,
+        TOTAL NUMERIC,
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
