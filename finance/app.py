@@ -236,7 +236,7 @@ def sell():
         sell_shares = request.form.get("shares")
         get_quote = lookup(symbol)
         if get_quote is None:
-            return apology("Invalid Symbol", 403)
+            return apology("Invalid Symbol", 400)
 
         if not sell_shares.isdigit() or int(sell_shares) <=0:
             return apology("Invalid Shares", 400)
@@ -250,7 +250,7 @@ def sell():
         # Get user's current shares of the stock
         user_shares = db.execute("SELECT SUM(shares) as total_shares FROM portfolio WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)
         if not user_shares or user_shares[0]['total_shares'] < sell_shares:
-            return apology("Insufficient shares", 403)
+            return apology("Insufficient shares", 400)
 
         # Insert the transaction into the portfolio table
         db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
