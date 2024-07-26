@@ -49,7 +49,8 @@ def index():
             "SELECT symbol, shares, price, total, cash FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
         )
 
-    return render_template("index.html", portfolio = )
+    print(index_portfolio, "index_portfolio")
+    return render_template("index.html", index_portfolio = index_portfolio)
 
 
 @app.route("/buy", methods=["GET", "POST"])
