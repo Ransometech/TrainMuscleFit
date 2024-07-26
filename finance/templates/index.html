@@ -16,12 +16,12 @@ Portfolio
         </tr>
     </thead>
     <tbody>
-        {% for entry in portfolio %}
+        {% for value in portfolio %}
         <tr>
-            <td class="text-start">{{ entry.symbol }}</td>
-            <td class="text-end">{{ entry.shares }}</td>
-            <td class="text-end">{{ entry.price }}</td>
-            <td class="text-end">{{ entry.total }}</td>
+            <td class="text-start">{{ value.symbol }}</td>
+            <td class="text-end">{{ value.shares }}</td>
+            <td class="text-end">{{ value.price }}</td>
+            <td class="text-end">{{ value.total }}</td>
         </tr>
         {% endfor %}
     </tbody>

@@ -55,7 +55,7 @@ def index():
         SELECT symbol, SUM(shares) AS shares, price, SUM(total) AS total
         FROM portfolio
         WHERE user_id = ?
-        GROUP BY symbol, price
+        GROUP BY symbol
     """, user_id)
 
     # Get the user's current cash balance
