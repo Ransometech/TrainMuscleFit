@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block main %}
+<h3>Buy Shares</h3>
+
     {% if get_quote %}
         <header>
             <p>A share of {{ get_quote.symbol }} costs ${{ get_quote.price }}</p>
