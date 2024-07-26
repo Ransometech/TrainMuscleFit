@@ -233,11 +233,15 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        sell_shares = int(request.form.get("shares"))
+        sell_shares = request.form.get("shares")
         get_quote = lookup(symbol)
         if get_quote is None:
             return apology("Invalid Symbol", 403)
 
+        if not sell_shares.isdigit() or int(sell_shares) <=0:
+            return apology("Invalid Shares", 400)
+
+        sell_shares = int(sell_shares)
         price = get_quote["price"]
         total_value = price * sell_shares
 
