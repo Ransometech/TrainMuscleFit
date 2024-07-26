@@ -190,12 +190,16 @@ def change_password():
             return apology("invalid password", 403)
 
         # check if password match
-         if new_password != confirm_password:
+        if new_password != confirm_password:
             return apology("password does not match", 403)
 
+        new_hash = generate_password_hash(password)
 
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        # Get user id
+        user_id = session["user_id"]
+        # change password
+        db.execute("UPDATE users SET hash = ? WHERE id = ?", new_hash, user_id)
+
         flash('Password changed!')
         # Redirect user to home page
         return redirect("/")
