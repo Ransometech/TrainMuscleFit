@@ -47,6 +47,10 @@ def index():
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
+    db.execute('''
+    ALTER TABLE portfolio
+    ADD COLUMN timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+    ''')
     user_id = session.get("user_id")
 
     # Get the user's portfolio
