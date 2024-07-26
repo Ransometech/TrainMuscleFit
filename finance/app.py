@@ -164,12 +164,18 @@ def change_password():
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
         # Ensure username was submitted
-        if not request.form.get("username"):
-            return apology("must provide username", 403)
+        password = request.form.get("password")
+        new_password = request.form.get("new_password")
+        confirm_password = request.form.get("confirm_password")
+        if not password:
+            return apology("must provide password", 403)
 
         # Ensure password was submitted
-        elif not request.form.get("password"):
-            return apology("must provide password", 403)
+        elif not new_password:
+            return apology("must provide new password", 403)
+
+        elif not confirm_password:
+            return apology("must confirm new password", 403)
 
         # Query database for username
 
@@ -177,15 +183,20 @@ def change_password():
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
         )
 
-        # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(
+        # check if password is correct
+        if check_password_hash(
             rows[0]["hash"], request.form.get("password")
         ):
-            return apology("invalid username and/or password", 403)
+            return apology("invalid password", 403)
+
+        # check if password match
+         if new_password != confirm_password:
+            return apology("password does not match", 403)
+
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
-        flash('Logged in!')
+        flash('Password changed!')
         # Redirect user to home page
         return redirect("/")
 
