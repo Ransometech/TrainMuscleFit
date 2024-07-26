@@ -52,7 +52,7 @@ def index():
 
     # Get the user's portfolio
     portfolio = db.execute("""
-        SELECT symbol, SUM(shares) AS shares, price, SUM(total) AS total
+        SELECT symbol, SUM(shares) AS shares, price, ROUND(SUM(total), 2) AS total
         FROM portfolio
         WHERE user_id = ?
         GROUP BY symbol
@@ -109,7 +109,7 @@ def history():
     user_id = session.get("user_id")
 
     # Get the user's transaction history
-    history = db.execute("SELECT symbol, shares, price, total, timestamp FROM portfolio WHERE user_id = ?", user_id)
+    history = db.execute("SELECT symbol, shares, price, ROUND(total, 2) AS total, timestamp FROM portfolio WHERE user_id = ?", user_id)
 
     return render_template('history.html', history=history)
 
