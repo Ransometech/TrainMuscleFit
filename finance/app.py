@@ -61,8 +61,17 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
 
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        if symbol.upper() != "USD":
+            return apology("Invalid Symbol", 403)
+
+        get_quote = lookup(symbol)
+        return render_template("buy.html", get_quote = get_quote)
+
+    else:
+        return render_template("buy.html")
 
 @app.route("/history")
 @login_required
@@ -183,4 +192,4 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    return render_template("sell.html")
