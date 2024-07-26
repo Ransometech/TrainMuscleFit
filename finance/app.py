@@ -131,7 +131,7 @@ def quote():
         if symbol.upper() != "USD":
             return apology("Invalid Symbol", 403)
 
-        get_quote = lookup()
+        get_quote = lookup(symbol)
         return render_template("quote.html", get_quote = get_quote)
 
     else:
