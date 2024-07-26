@@ -72,6 +72,7 @@ def buy():
         total_shares = get_quote["price"] * int(shares)
         print(type(total_shares), total_shares)
 
+        flash('Bought' + symbol + "!")
         return render_template("index.html", get_quote = get_quote)
 
     else:
