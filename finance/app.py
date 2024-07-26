@@ -43,6 +43,7 @@ def index():
         shares INTEGER,
         price NUMERIC,
         total NUMERIC,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
