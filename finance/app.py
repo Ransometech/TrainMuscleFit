@@ -161,6 +161,9 @@ def login():
 def change_password():
     """Change user password"""
 
+    # Get user id
+    user_id = session["user_id"]
+
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
         # Ensure username was submitted
@@ -180,13 +183,11 @@ def change_password():
         # Query database for username
 
         rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
-        )
+            "SELECT * FROM users WHERE id = ?", user_id)
 
         # check if password is correct
         if check_password_hash(
-            rows[0]["hash"], request.form.get("password")
-        ):
+            rows[0]["hash"], password):
             return apology("invalid password", 403)
 
         # check if password match
@@ -195,8 +196,7 @@ def change_password():
 
         new_hash = generate_password_hash(password)
 
-        # Get user id
-        user_id = session["user_id"]
+
         # change password
         db.execute("UPDATE users SET hash = ? WHERE id = ?", new_hash, user_id)
 
