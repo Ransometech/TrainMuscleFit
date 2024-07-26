@@ -17,13 +17,13 @@ History
         </tr>
     </thead>
     <tbody>
-        {% for entry in history %}
+        {% for value in history %}
         <tr>
-            <td class="text-start">{{ entry.symbol }}</td>
-            <td class="text-end">{{ entry.shares }}</td>
-            <td class="text-end">{{ entry.price }}</td>
-            <td class="text-end">{{ entry.total }}</td>
-            <td class="text-end">{{ entry.timestamp }}</td>
+            <td class="text-start">{{ value.symbol }}</td>
+            <td class="text-end">{{ value.shares }}</td>
+            <td class="text-end">{{ value.price }}</td>
+            <td class="text-end">{{  "%.2f"|format(value.total) }}</td>
+            <td class="text-end">{{ value.timestamp }}</td>
         </tr>
         {% endfor %}
     </tbody>
