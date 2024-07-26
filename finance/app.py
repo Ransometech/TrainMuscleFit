@@ -251,7 +251,10 @@ def sell():
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", total_value, user_id)
 
         flash(f'Sold {shares_to_sell} shares of {symbol}!')
+
         return redirect("/")
 
     else:
-        return render_template("sell.html")
+        user_id = session.get("user_id")
+        symbols = db.execute("SELECT symbol FROM portfolio WHERE user_id = ? GROUP BY symbol", user_id)
+        return render_template("sell.html", symbols=symbols)

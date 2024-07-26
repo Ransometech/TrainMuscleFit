@@ -8,7 +8,12 @@
     <h2>Sell Shares</h2>
     <form action="/sell" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text" required>
+            <select class="form-control mx-auto w-auto" name="symbol" required>
+                <option value="" disabled selected>Select Symbol</option>
+                {% for symbol in symbols %}
+                    <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
             <input autocomplete="off" class="form-control mx-auto w-auto" min="1" name="shares" placeholder="Shares" type="number" required>
