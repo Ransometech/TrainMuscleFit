@@ -157,8 +157,8 @@ def login():
     else:
         return render_template("login.html")
 
-@app.route("/password_reset", methods=["GET", "POST"])
-def password_reset():
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
     """Change user password"""
 
     # Forget any user_id
@@ -194,7 +194,7 @@ def password_reset():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("password_reset.html")
+        return render_template("change_password.html")
 
 
 @app.route("/logout")
