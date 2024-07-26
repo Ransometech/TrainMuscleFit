@@ -9,30 +9,30 @@ Portfolio
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Symbol</th>
-            <th>Shares</th>
-            <th>Price</th>
-            <th>Total</th>
+            <th class="text-start">Symbol</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">TOTAL</th>
         </tr>
     </thead>
     <tbody>
         {% for entry in portfolio %}
         <tr>
-            <td>{{ entry[0] }}</td>
-            <td>{{ entry[1] }}</td>
-            <td>{{ entry[2] }}</td>
-            <td>{{ entry[3] }}</td>
+            <td class="text-start">{{ entry[0] }}</td>
+            <td class="text-end">{{ entry[1] }}</td>
+            <td class="text-end">{{ entry[2] }}</td>
+            <td class="text-end">{{ entry[3] }}</td>
         </tr>
         {% endfor %}
     </tbody>
     <tfoot>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
-            <td class="border-0 text-end">$9,318.94</td>
+            <td class="border-0 text-end">${{ cash }}</td>
         </tr>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
-            <td class="border-0 w-bold text-end">$10,000.00</td>
+            <td class="border-0 fw-bold text-end">${{ total }}</td>
         </tr>
     </tfoot>
 </table>
