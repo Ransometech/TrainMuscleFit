@@ -5,13 +5,25 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/login" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
-    </form>
+<div class="section">
+
+    <h2>All Birthdays</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for birthday in birthdays %}
+            <tr></tr>
+                <td>{{ birthday.name }}</td>
+                <td>{{ birthday.month|string ~ "/" ~ birthday.day|string}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
