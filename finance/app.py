@@ -46,15 +46,19 @@ def index():
         FOREIGN KEY(user_id) REFERENCES users(id)
     );
     ''')
-    print("index22")
+    user_id = session.get("user_id")
 
-    index_portfolio = db.execute(
-            "SELECT symbol, shares, price, total, cash FROM portfolio JOIN users ON id = user_id WHERE id = ?",  session["user_id"])
+    # Get the user's portfolio
+    portfolio = db.execute("SELECT symbol, shares, price, total FROM portfolio WHERE user_id = ?", user_id)
 
-    print(index_portfolio, "index_portfolio222")
-    print("index_portfolioweefdwedfe111")
+    # Get the user's current cash balance
+    usr = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    cash = user[0]['cash'] if user else 0
 
-    return render_template("index.html", index_portfolio = index_portfolio)
+    # Calculate the total portfolio value
+    total_portfolio_value = sum([item['total'] for item in portfolio]) + cash
+
+    return render_template('index.html', portfolio=portfolio, cash=cash, total=total_portfolio_value)
 
 
 @app.route("/buy", methods=["GET", "POST"])
