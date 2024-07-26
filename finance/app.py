@@ -75,14 +75,14 @@ def buy():
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        shares = request.form.get("shares")
         get_quote = lookup(symbol)
         if get_quote is None:
             return apology("Invalid Symbol", 400)
 
 
         if not shares.isdigit() or int(shares) <=0:
-            return apology("Invalid Shares", 200)
+            return apology("Invalid Shares", 400)
         shares = int(shares)
         price = get_quote["price"]
         total_cost = price * shares
