@@ -102,7 +102,7 @@ def login():
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
-
+        flash('Logged in!')
         # Redirect user to home page
         return redirect("/")
 
