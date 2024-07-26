@@ -101,7 +101,7 @@ def buy():
         db.execute("INSERT INTO portfolio (user_id, symbol, shares, price, total) VALUES (?, ?, ?, ?, ?)",
                    user_id, symbol, shares, price, total_cost)
 
-        flash(f'Bought {shares} shares of 112.00 {symbol}!')
+        flash(f'Bought {shares} shares of 112.00 9,888.00 {symbol}!')
         return redirect("/")
     else:
         return render_template("buy.html")
