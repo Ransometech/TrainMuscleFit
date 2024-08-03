@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Plan
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h1>My Plan</h1>
+        {% if plans %}
+            <p>You have selected a {{ plans[0]['days'] }}-day program.</p>
+            <div class="day-buttons">
+                {% for day in range(1, plans[0]['days'] + 1) %}
+                    <form action="{{ url_for('start_program_day', day=day) }}" method="POST" class="mb-1">
+                        <button type="submit" class="btn btn-primary">Start Day {{ day }}</button>
+                    </form>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No program selected.</p>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Program - {{ days }} Days
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2>{{ days }} Days Program</h2>
+        <p>Select a day to view the workouts:</p>
+        <div class="row">
+            {% for day in range(1, days+1) %}
+                <div class="col">
+                    <a href="/workout_day/{{ day }}" class="btn btn-secondary">Day {{ day }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<form action="{{ url_for('select_program', days=days) }}" method="POST">
+        <button type="submit" class="btn btn-success">Select Program</button>
+    </form>
+{% endblock %}

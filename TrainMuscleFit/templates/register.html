@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<h2>Register</h2>
+<form action="/register" method="post">
+    <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select class="form-control" id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="age_range" class="form-label">Age Range</label>
+        <select class="form-control" id="age_range" name="age_range">
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46+">46+</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="main_goal" class="form-label">Main Goal for Training</label>
+        <select class="form-control" id="main_goal" name="main_goal">
+            <option value="lose_weight">Lose weight</option>
+            <option value="gain_muscle">Gain muscle & build strength</option>
+            <option value="get_lean">Get lean & defined</option>
+            <option value="improve_endurance">Improve endurance</option>
+            <option value="feel_healthier">Feel healthier</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="current_build" class="form-label">Which describes your current build?</label>
+        <select class="form-control" id="current_build" name="current_build">
+            <option value="skinny">Skinny</option>
+            <option value="average">Average</option>
+            <option value="overweight">Overweight</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="goal_body_type" class="form-label">What's your goal body type?</label>
+        <select class="form-control" id="goal_body_type" name="goal_body_type">
+            <option value="shredded">Shredded</option>
+            <option value="bulk">Bulk</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="height" class="form-label">Height (in cm)</label>
+        <input type="number" class="form-control" id="height" name="height">
+    </div>
+    <div class="mb-3">
+        <label for="weight" class="form-label">Weight (in kg)</label>
+        <input type="number" class="form-control" id="weight" name="weight">
+    </div>
+    <div class="mb-3">
+        <label for="goal_weight" class="form-label">Goal Weight (in kg)</label>
+        <input type="number" class="form-control" id="goal_weight" name="goal_weight">
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <div class="mb-3">
+        <label for="confirmation" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmation" name="confirmation" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

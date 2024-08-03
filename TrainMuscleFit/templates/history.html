@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<h1>History</h1>
+
+<h4>Workout Days</h4>
+<ul>
+    {% if workout_days %}
+        {% for entry in workout_days %}
+            <li>
+                <strong>Day:</strong> {{ entry.day }}<br>
+                <strong>Program:</strong> {{ entry.program }}-day program<br>
+                <strong>Total Workout Time:</strong> {{ entry.total_workout_time // 60 }} minutes and {{ entry.total_workout_time % 60 }} seconds<br>
+                <strong>Completed At:</strong> {{ entry.completed_at }}
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>No workout day data available.</li>
+    {% endif %}
+</ul>
+
+<h4>Workouts</h4>
+<ul>
+    {% if workouts %}
+        {% for workout in workouts %}
+            <li>
+                <strong>Exercise:</strong> {{ workout.name }}<br>
+                <strong>Day:</strong> {{ workout.day }}<br>
+                <strong>Total Workout Time:</strong> {{ workout.total_workout_time // 60 }} minutes and {{ workout.total_workout_time % 60 }} seconds<br>
+                <strong>Completed At:</strong> {{ workout.completed_at }}
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>No workout data available.</li>
+    {% endif %}
+</ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Nutrition
+{% endblock %}
+
+{% block main %}
+<h2>Nutrition Information</h2>
+<form action="/nutrition" method="post">
+    <div class="form-group">
+        <input type="text" name="food_item" class="form-control" placeholder="Enter food item" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Get Nutrition Info</button>
+</form>
+
+{% if nutrition_data %}
+    <h3>Results</h3>
+    <ul>
+    {% for item in nutrition_data['foods'] %}
+        <li>
+            <strong>{{ item['food_name'] }}</strong><br>
+            Serving Size: {{ item['serving_qty'] }} {{ item['serving_unit'] }}<br>
+            Calories: {{ item['nf_calories'] }}<br>
+            Total Fat: {{ item['nf_total_fat'] }}g<br>
+            Saturated Fat: {{ item['nf_saturated_fat'] }}g<br>
+            Cholesterol: {{ item['nf_cholesterol'] }}mg<br>
+            Sodium: {{ item['nf_sodium'] }}mg<br>
+            Total Carbohydrates: {{ item['nf_total_carbohydrate'] }}g<br>
+            Dietary Fiber: {{ item['nf_dietary_fiber'] }}g<br>
+            Sugars: {{ item['nf_sugars'] }}g<br>
+            Protein: {{ item['nf_protein'] }}g<br>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

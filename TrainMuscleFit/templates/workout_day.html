@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Workout Day {{ day }}
+{% endblock %}
+
+{% block main %}
+    <h2>Workout Day {{ day }}</h2>
+    <div id="generalTimer" style="display: none;">
+        <h3>Total Workout Time: <span id="generalTime">{{ total_time }}</span> seconds</h3>
+    </div>
+    <ul>
+        {% for workout in workouts %}
+            <li>
+                <a href="{{ url_for('exercise', id=workout.id, day=day, from_plan=show_timer) }}">{{ workout.name }}</a>
+                {% if show_timer %}
+                    <a class="btn btn-success" href="{{ url_for('start_workout', exercise_id=workout.id, day=day) }}">Start</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if show_timer %}
+        <button id="endWorkoutBtn" class="btn btn-danger">End All Workout</button>
+    {% endif %}
+    <script>
+        let generalTimer;
+        let generalTime = {{ total_time }};
+
+        function updateGeneralTimer() {
+            generalTime++;
+            document.getElementById('generalTime').innerText = generalTime;
+        }
+
+        if ({{ show_timer | tojson }}) {
+            document.getElementById('generalTimer').style.display = 'block';
+            generalTimer = setInterval(updateGeneralTimer, 1000);
+        }
+
+        document.getElementById('endWorkoutBtn').addEventListener('click', function() {
+            clearInterval(generalTimer);
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = "{{ url_for('end_all_workout') }}";
+            form.innerHTML = `<input type="hidden" name="total_time" value="${generalTime}">`;
+            document.body.appendChild(form);
+            form.submit();
+        });
+    </script>
+{% endblock %}

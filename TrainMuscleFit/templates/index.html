@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<h2>Welcome to Your Fitness App</h2>
+<p>Track your workouts and nutrition here.</p>
+
+<h3>Your Workouts</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Workout</th>
+            <th>Duration (min)</th>
+            <th>Calories Burned</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for workout in workouts %}
+        <tr>
+            <td>{{ workout.date }}</td>
+            <td>{{ workout.workout }}</td>
+            <td>{{ workout.duration }}</td>
+            <td>{{ workout.calories_burned }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Your Nutrition</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Food Item</th>
+            <th>Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for food in nutrition %}
+        <tr>
+            <td>{{ food.date }}</td>
+            <td>{{ food.food_item }}</td>
+            <td>{{ food.calories }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

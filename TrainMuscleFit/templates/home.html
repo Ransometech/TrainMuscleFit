@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid text-center">
+        <h2>Welcome to TrainMuscleFit, {{ user_name }}!</h2>
+
+        <!-- Display the gym photo -->
+        <img src="{{ url_for('static', filename='images/gym.png') }}" alt="Gym Photo" class="img-fluid w-100 mb-4" style="height: auto;">
+
+        <p>Select a program to start:</p>
+        <div class="row">
+            <div class="col">
+                <a href="/program/3" class="btn btn-primary">3 Days Program</a>
+            </div>
+            <div class="col">
+                <a href="/program/4" class="btn btn-primary">4 Days Program</a>
+            </div>
+            <div class="col">
+                <a href="/program/5" class="btn btn-primary">5 Days Program</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

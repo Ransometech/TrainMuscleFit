@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>{{ workout.name }}</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ workout.name }}</h1>
+        <img src="{{ workout.gif_path }}" alt="{{ workout.name }}" class="img-fluid">
+        <p><strong>Instructions:</strong> {{ workout.instructions }}</p>
+        <p><strong>Complete in:</strong> <span id="workoutTime">60</span> seconds</p>
+        <button id="completeSetBtn" class="btn btn-primary">Complete Set</button>
+        <button id="skipRestBtn" class="btn btn-warning" style="display: none;">Skip Rest</button>
+        <a href="{{ url_for('workout_day', day=day, from_plan=True) }}" class="btn btn-info">Workouts</a>
+        <button id="endWorkoutBtn" class="btn btn-danger">End Workout</button>
+    </div>
+
+    <div class="container mt-3">
+        <div id="restTimer" style="display: none;">
+            <h3>Rest Timer: <span id="restTime">120</span> seconds</h3>
+        </div>
+    </div>
+
+    <script>
+        let restTime = 120;  // 2 minutes rest
+        let workoutTime = 60;  // 1 minute max for exercise
+        let restTimer;
+        let workoutTimer;
+        let totalTime = {{ total_time | default(0) | tojson }}; // Set a default value
+
+        function startWorkout() {
+            workoutTimer = setInterval(updateWorkoutTimer, 1000);
+        }
+
+        function updateWorkoutTimer() {
+            if (workoutTime > 0) {
+                workoutTime--;
+                document.getElementById('workoutTime').innerText = workoutTime;
+            } else {
+                completeSet();
+            }
+        }
+
+        function completeSet() {
+            clearInterval(workoutTimer);
+            totalTime += (60 - workoutTime);  // Add the workout time
+            workoutTime = 60;
+            document.getElementById('restTimer').style.display = 'block';
+            document.getElementById('completeSetBtn').style.display = 'none';
+            document.getElementById('skipRestBtn').style.display = 'block';
+            restTimer = setInterval(updateRestTimer, 1000);
+        }
+
+        function updateRestTimer() {
+            if (restTime > 0) {
+                restTime--;
+                document.getElementById('restTime').innerText = restTime;
+            } else {
+                clearInterval(restTimer);
+                document.getElementById('restTimer').style.display = 'none';
+                document.getElementById('completeSetBtn').style.display = 'block';
+                document.getElementById('skipRestBtn').style.display = 'none';
+                restTime = 120;
+                startWorkout();
+            }
+        }
+
+        function skipRest() {
+            clearInterval(restTimer);
+            document.getElementById('restTimer').style.display = 'none';
+            document.getElementById('completeSetBtn').style.display = 'block';
+            document.getElementById('skipRestBtn').style.display = 'none';
+            restTime = 120;
+            startWorkout();
+        }
+
+        function endWorkout() {
+            clearInterval(workoutTimer);
+            clearInterval(restTimer);
+            totalTime += (60 - workoutTime);  // Add remaining workout time
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = "{{ url_for('complete_workout', exercise_id=workout.id) }}";
+            form.innerHTML = `<input type="hidden" name="total_time" value="${totalTime}">`;
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        document.getElementById('completeSetBtn').addEventListener('click', completeSet);
+        document.getElementById('skipRestBtn').addEventListener('click', skipRest);
+        document.getElementById('endWorkoutBtn').addEventListener('click', endWorkout);
+
+        startWorkout();
+    </script>
+</body>
+</html>

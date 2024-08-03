@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>Workout Search</title>
+    <style>
+        /* Loading spinner style */
+        #loading-spinner {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+<h1 class="text-center">Find Exercises</h1>
+
+<!-- Loading Spinner -->
+<div id="loading-spinner" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<!-- Search and filter form -->
+<form class="row mb-4" id="search-form">
+    <div class="col-md-3">
+        <input type="text" class="form-control" name="search" placeholder="Search by name" value="{{ request.args.get('search', '') }}">
+    </div>
+    <div class="col-md-2">
+        <select class="form-control" name="body_part">
+            <option value="">Body Part</option>
+            {% for part in body_parts %}
+                <option value="{{ part.body_part }}" {% if request.args.get('body_part') == part.body_part %}selected{% endif %}>{{ part.body_part }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control" name="target">
+            <option value="">Target Muscle</option>
+            {% for target in targets %}
+                <option value="{{ target.target }}" {% if request.args.get('target') == target.target %}selected{% endif %}>{{ target.target }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control" name="equipment">
+            <option value="">Equipment</option>
+            {% for equip in equipments %}
+                <option value="{{ equip.equipment }}" {% if request.args.get('equipment') == equip.equipment %}selected{% endif %}>{{ equip.equipment }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<!-- Exercises list -->
+<div id="exercises-list">
+    {% for exercise in exercises %}
+    <div class="exercise card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ exercise.name }}</h5>
+            <p class="card-text"><strong>Body Part:</strong> {{ exercise.body_part }}</p>
+            <a href="{{ url_for('view_exercise', id=exercise.id, return_url=request.full_path) }}" class="btn btn-primary">View Exercise</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Load more button -->
+{% if exercises|length == limit %}
+<button id="load-more" class="btn btn-secondary">Load More</button>
+{% endif %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let offset = {{ limit }};
+        const limit = {{ limit }};
+        const loadMoreButton = document.getElementById('load-more');
+        const loadingSpinner = document.getElementById('loading-spinner');
+
+        // Handle Load More button
+        if (loadMoreButton) {
+            loadMoreButton.addEventListener('click', function () {
+                loadingSpinner.style.display = 'block';
+                const formData = new FormData(document.getElementById('search-form'));
+                const query = new URLSearchParams(formData).toString();
+                fetch(`/load_more_exercises?offset=${offset}&limit=${limit}&${query}`)
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('exercises-list').insertAdjacentHTML('beforeend', html);
+                        offset += limit;
+                    })
+                    .finally(() => {
+                        loadingSpinner.style.display = 'none';
+                    });
+            });
+        }
+
+        // Handle search and filter
+        document.getElementById('search-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            loadingSpinner.style.display = 'block';
+            const formData = new FormData(e.target);
+            const query = new URLSearchParams(formData).toString();
+            fetch(`/workout?${query}`)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newExercisesList = doc.getElementById('exercises-list').innerHTML;
+                    document.getElementById('exercises-list').innerHTML = newExercisesList;
+                    offset = limit; // Reset offset for new search
+                })
+                .finally(() => {
+                    loadingSpinner.style.display = 'none';
+                });
+        });
+    });
+</script>
+{% endblock %}
