@@ -1,6 +1,6 @@
 # TrainMuscleFit
 
-#### Video Demo:  https://youtu.be/RbDf-cVlp0o
+#### Video Demo:  [https://youtu.be/RbDf-cVlp0o](https://youtu.be/VoZM_mAxuxI?si=iGtRq0wGqMZk-dlb)
 
 #### Description:
 
