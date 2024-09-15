@@ -1,7 +1,6 @@
 # TrainMuscleFit
 
-#### Video Demo:  [https://youtu.be/RbDf-cVlp0o](https://youtu.be/VoZM_mAxuxI?si=iGtRq0wGqMZk-dlb)
-
+### Demo: [TrainMuscleFit Demo](https://trainmusclefit.pythonanywhere.com/)
 #### Description:
 
 TrainMuscleFit is a fitness and nutrition web app designed to help users reach their fitness goals through structured workout plans and nutrition tracking. Users can register, select workout programs, track exercise history, and explore nutritional information for various foods. Built with Flask and SQLite, the app integrates ExerciseDB and Nutritionix APIs to provide extensive data on exercises and nutrition.
